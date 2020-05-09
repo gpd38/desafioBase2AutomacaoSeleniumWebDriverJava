@@ -1,4 +1,4 @@
-# Desafio Base2 Automacao Selenium WebDriver
+# Desafio Base2 Automação Selenium WebDriver
 
 Projeto da empresa Base2 Tecnologia para os funcionários aprenderem e testarem seus conhecimentos de automação.
 
