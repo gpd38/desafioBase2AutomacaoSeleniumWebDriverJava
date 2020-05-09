@@ -20,3 +20,10 @@ Java: normalmente utiliza-se a classe Properties e cria-se um arquivo chamado en
 5. Gravar screenshots ou vídeo automaticamente dos casos de testes.
 6. O projeto deverá gerar um relatório de testes automaticamente com screenshots ou vídeos embutidos. Sugestões: Allure Report ou ExtentReport.
 7. A massa de testes deve ser preparada neste projeto, seja com scripts carregando massa nova no BD ou com restore de banco de dados.
+
+
+#### Desafio parte 3
+
+8. Um dos scripts deve injetar Javascript para executar alguma operação na tela. O objetivo aqui é exercitar a injeção de Javascript dentro do código do Selenium.
+Sugestão: fazer o login usando Javascript ao invés do código do Selenium.
+9. Testes deverão ser agendados pelo Jenkins, CircleCI, TFS, TeamCity ou outra ferramenta de CI que preferir.
