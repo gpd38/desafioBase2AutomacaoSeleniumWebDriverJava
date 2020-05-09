@@ -39,9 +39,23 @@ Sugestão: fazer o login usando Javascript ao invés do código do Selenium.
 
 #### Problema x Solução
 
+Ver [Wiki](#) 
 
 #### Extras
 
+Agradeço ao [Saymowan](https://github.com/saymowan/docker-mantis-mariadb) por ter disponibilizado um tutorial para instalação do mantis via docker, pois foi importante para a construção deste projeto.
+
+A linguagem de configuração da aplicação mantis está em inglês (EN), por tanto as validações podem ser divergentes se o teste for executado em português (PT-BR)
 
 #### Bibliografia
 
+1. https://www.guru99.com/selenium-tutorial.html
+2. https://github.com/saymowan/docker-mantis-mariadb
+3. https://www.udemy.com/
+4. https://www.alura.com.br/
+5. https://stackoverflow.com/
+6. https://www.pluralsight.com/guides/getting-started-with-page-object-pattern-for-your-selenium-tests
+7. https://docs.cucumber.io/cucumber/api
+8. https://www.seleniumhq.org/docs/03_webdriver.jsp
+9. https://mvnrepository.com/
+10. http://www.automationtestinghub.com/
