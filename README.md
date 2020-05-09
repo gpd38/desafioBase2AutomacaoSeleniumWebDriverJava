@@ -14,3 +14,9 @@ Quem utilizar Cucumber, SpecFlow ou outra ferramenta de BDD não precisa impleme
 Não é necessário executar em paralelo. Pode ser demonstrada a execução dos browsers separadamente.
 Não é uma boa prática executar os testes em todos os browsers em uma única execução. A melhor forma é controlar o browser através de um arquivo de configuração.
 Java: normalmente utiliza-se a classe Properties e cria-se um arquivo chamado environment.properties.
+
+#### Desafio parte 2
+
+5. Gravar screenshots ou vídeo automaticamente dos casos de testes.
+6. O projeto deverá gerar um relatório de testes automaticamente com screenshots ou vídeos embutidos. Sugestões: Allure Report ou ExtentReport.
+7. A massa de testes deve ser preparada neste projeto, seja com scripts carregando massa nova no BD ou com restore de banco de dados.
