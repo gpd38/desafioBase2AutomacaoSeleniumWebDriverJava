@@ -27,3 +27,21 @@ Java: normalmente utiliza-se a classe Properties e cria-se um arquivo chamado en
 8. Um dos scripts deve injetar Javascript para executar alguma operação na tela. O objetivo aqui é exercitar a injeção de Javascript dentro do código do Selenium.
 Sugestão: fazer o login usando Javascript ao invés do código do Selenium.
 9. Testes deverão ser agendados pelo Jenkins, CircleCI, TFS, TeamCity ou outra ferramenta de CI que preferir.
+
+#### Andamento do desafio
+
+
+#### Funcionalidades automatizadas
+
+
+#### Dados do projeto
+
+
+#### Problema x Solução
+
+
+#### Extras
+
+
+#### Bibliografia
+
