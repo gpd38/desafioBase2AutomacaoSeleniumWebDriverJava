@@ -2,7 +2,7 @@
 
 Projeto da empresa Base2 Tecnologia para os funcionários aprenderem e testarem seus conhecimentos de automação.
 
-A aplicação a ser automatiada será o mantis
+A aplicação a ser automatiada será o mantis.
 
 #### Desafio parte 1
 
@@ -30,16 +30,90 @@ Sugestão: fazer o login usando Javascript ao invés do código do Selenium.
 
 #### Andamento do desafio
 
+| Item Desafio   | Status do projeto |
+| -------------- | ----------------- |
+| Nº 1 		       | Não Iniciado      |
+| Nº 2 		       | Não Iniciado      |
+| Nº 3 		       | Não Iniciado      |
+| Nº 4 		       | Não Iniciado      |
+| Nº 5 		       | Não Iniciado      |
+| Nº 6 		       | Não Iniciado      |
+| Nº 7 		       | Não Iniciado      |
+| Nº 8 		       | Não Iniciado      |
+| Nº 9 		       | Não Iniciado      |
 
 #### Funcionalidades automatizadas
 
+Serão automatizadas 53 funcionalidades divididas nas seguintes telas.
+
+- Tela Login - 3
+  - TestCaseLoginSucesso 
+  - TestCaseLoginFalha 
+  - TestCasePerdeuSenha 
+- Tela Minha Visão - 6
+  - TestCaseMinhaVisaoAtribuidosAMim
+  - TestCaseMinhaVisaoNaoAtribuidos
+  - TestCaseMinhaVisaoRelatadosPorMim
+  - TestCaseMinhaVisaoResolvidos
+  - TestCaseMinhaVisaoModificadosRecentemente
+  - TestCaseMinhaVisaoMonitoradosPorMim
+- Tela minha Conta - 1
+  - TestCaseAcessarMinhaConta
+- Tela Ver Tarefas - 13
+  - TestCaseVisualizarTarefaCadastrada
+  - TestCaseMoverTarefa
+  - TestCaseCopiarTarefa
+  - TestCaseAtribuirTarefa
+  - TestCaseApagarTarefa
+  - TestCaseResolverTarefa
+  - TestCaseAtualizarPrioridadeTarefa
+  - TestCaseAtualizarGravidadeTarefa
+  - TestCaseAtualizarStatusTarefa
+  - TestCaseAtualizarCategoriaTarefa
+  - TestCaseSalvarFiltroAtual
+  - TestCaseFiltrarPorCategoria
+  - TestCaseFiltrarPorGravidade
+- Tela Criar Tarefa - 5
+  - TestCaseCriarNovaTarefa
+  - TestCaseValidarCriarMaisTarefas
+  - TestCaseValidarCampoResumoObrigatorio
+  - TestCaseValidarCampoDescricaoObrigatorio
+  - TestCaseValidarTamanhoArquivoAnexo
+- Tela Gerenciar
+  - Gerenciar usuários - 6
+    - TestCaseCriarNovoUsuario
+    - TestCaseCriarUsuarioRepetido
+    - TestCaseEditarUsuario
+    - TestCaseDeletarUsuario
+    - TestCaseDesativarUsuario
+    - TestCaseFiltrarUsuariosDesativados
+  - Gerenciar projetos - 11
+    - TestCaseCriarCategoria
+    - TestCaseEditarCategoria
+    - TestCaseDeletarCategoria
+    - TestCaseCriarProjeto
+    - TestCaseCriarProjetoRepetido
+    - TestCaseEditarProjeto
+    - TestCaseDeletarProjeto
+    - TestCaseCriarSubProjeto
+    - TestCaseEditarSubProjeto
+    - TestCaseAdicionarUsuariosAoProjeto
+    - TestCaseRemoverUsuariosDoProjeto
+  - Gerenciar marcadores - 4
+    - TestCaseCriarNovoMarcador
+    - TestCaseDeletarMarcador
+    - TestCaseCriarMarcadorRepetido
+    - TestCaseEditarMarcador
+  - Gerenciar perfis - 4
+    - TestCaseCriarNovoPerfil
+    - TestCaseDeletarPerfil
+    - TestCaseEditarPerfil
+    - TestCaseCriarPerfilRepetido
 
 #### Dados do projeto
 
 
 #### Problema x Solução
-
-Ver [Wiki](#) 
 
 #### Extras
 
