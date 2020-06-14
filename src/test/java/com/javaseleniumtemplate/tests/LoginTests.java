@@ -1,72 +1,113 @@
 package com.javaseleniumtemplate.tests;
 
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 import com.javaseleniumtemplate.bases.TestBase;
 import com.javaseleniumtemplate.dbsteps.UsuariosDBSteps;
 import com.javaseleniumtemplate.pages.LoginPage;
 import com.javaseleniumtemplate.pages.MainPage;
-import org.testng.Assert;
-import org.testng.annotations.Test;
 
 public class LoginTests extends TestBase {
-    //Objects
-    LoginPage loginPage;
-    MainPage mainPage;
+	// Objects
+	LoginPage loginPage;
+	MainPage mainPage;
 
-    //Tests
-    @Test
-    public void efetuarLoginComSucesso(){
-        //Objects instances
-        loginPage = new LoginPage();
-        mainPage = new MainPage();
+	// Tests
+	@Test
+	public void efetuarLoginComSucesso() {
+		// Objects instances
+		loginPage = new LoginPage();
+		mainPage = new MainPage();
 
-        //Parameteres
-        String usuario = "administrator";
-        String senha = "mantisbt";
+		// Parameteres
+		String usuario = "administrator";
+		String senha = "mantisbt";
 
-        //Test
-        loginPage.preenhcerUsuario(usuario);
-        loginPage.clicarEmLogin();
-        loginPage.preencherSenha(senha);
-        loginPage.clicarEmLogin();
+		// Test
+		loginPage.preenhcerUsuario(usuario);
+		loginPage.clicarEmLogin();
+		loginPage.preencherSenha(senha);
+		loginPage.clicarEmLogin();
 
-        Assert.assertEquals(usuario, mainPage.retornaUsernameDasInformacoesDeLogin());
-    }
+		Assert.assertEquals(usuario, mainPage.retornaUsernameDasInformacoesDeLogin());
+	}
+	
+	@Test
+	public void efetuarLoginComSenhaErrada() {
+		// Objects instances
+		loginPage = new LoginPage();
+		mainPage = new MainPage();
 
-    @Test
-    public void efetuarLoginComSucesso_SenhaRetornadaDoDB(){
-        //Objects instances
-        loginPage = new LoginPage();
-        mainPage = new MainPage();
+		// Parameteres
+		String usuario = "administrator";
+		String senha = "123456";
+		String mensagemErroEsperada = "Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos."; 
 
-        //Parameteres
-        String usuario = "administrator";
-        String senha = UsuariosDBSteps.retornaSenhaDoUsuarioDB(usuario);
+		// Test
+		loginPage.preenhcerUsuario(usuario);
+		loginPage.clicarEmLogin();
+		loginPage.preencherSenha(senha);
+		loginPage.clicarEmLogin();
 
-        //Test
-        loginPage.preenhcerUsuario(usuario);
-        loginPage.clicarEmLogin();
-        loginPage.preencherSenha(senha);
-        loginPage.clicarEmLogin();
+		Assert.assertEquals(mensagemErroEsperada, loginPage.retornaMensagemDeErro());
+	}
+	
+	@Test
+	public void efetuarLoginComUsuarioNulo() {
+		// Objects instances
+		loginPage = new LoginPage();
+		mainPage = new MainPage();
 
-        Assert.assertEquals(usuario, mainPage.retornaUsernameDasInformacoesDeLogin());
-    }
-    
-    @Test
-    public void efetuarLoginComSenhaErrada(){
-        //Objects instances
-        loginPage = new LoginPage();
-        mainPage = new MainPage();
+		// Parameteres
+		String usuario = "   ";
+		String mensagemErroEsperada = "Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos."; 
 
-        //Parameteres
-        String usuario = "administrator";
-        String senha = "123456";
+		// Test
+		loginPage.preenhcerUsuario(usuario);
+		loginPage.clicarEmLogin();
 
-        //Test
-        loginPage.preenhcerUsuario(usuario);
-        loginPage.clicarEmLogin();
-        loginPage.preencherSenha(senha);
-        loginPage.clicarEmLogin();
+		Assert.assertEquals(mensagemErroEsperada, loginPage.retornaMensagemDeErro());
+	}
+	
+	//@Test
+	public void perdeuSuaSenha() {
+		// Objects instances
+		loginPage = new LoginPage();
+		mainPage = new MainPage();
 
-        Assert.assertEquals(usuario, loginPage.retornaMensagemDeErro());
-    }
+		// Parameteres
+		String usuario = "administrator";
+		String url = "http://192.168.99.100:8989/lost_pwd_page.php";
+
+		// Test
+		loginPage.preenhcerUsuario(usuario);
+		loginPage.clicarEmLogin();
+		//loginPage.clicarEmPerdeuSenha();
+		//loginPage.preencherEmail(email);
+		//loginPage.clicarEmEnviar();
+		
+		Assert.assertEquals(url, loginPage.getURL());
+
+	}
+
+	//@Test
+	public void efetuarLoginComSucesso_SenhaRetornadaDoDB() {
+		// Objects instances
+		loginPage = new LoginPage();
+		mainPage = new MainPage();
+
+		// Parameteres
+		String usuario = "administrator";
+		String senha = UsuariosDBSteps.retornaSenhaDoUsuarioDB(usuario);
+
+		// Test
+		loginPage.preenhcerUsuario(usuario);
+		loginPage.clicarEmLogin();
+		loginPage.preencherSenha(senha);
+		loginPage.clicarEmLogin();
+
+		Assert.assertEquals(usuario, mainPage.retornaUsernameDasInformacoesDeLogin());
+	}
+
 }

@@ -9,7 +9,9 @@ public class UsuariosDBSteps {
 
     public static String retornaSenhaDoUsuarioDB(String usuario){
         String query = Utils.getFileContent(queriesPath + "retornaSenhaDoUsuario.sql").replace("$usuario", usuario);
-
+        
+        System.out.println(">>>>> "+query);
+        
         return DBUtils.getQueryResult(query).get(0);
     }
 }
