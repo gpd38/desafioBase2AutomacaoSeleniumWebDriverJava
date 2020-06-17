@@ -1,5 +1,10 @@
 package com.javaseleniumtemplate.tests;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+import org.apache.commons.codec.digest.Md5Crypt;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,7 +19,7 @@ public class LoginTests extends TestBase {
 	MainPage mainPage;
 
 	// Tests
-	@Test
+	//@Test
 	public void efetuarLoginComSucesso() {
 		// Objects instances
 		loginPage = new LoginPage();
@@ -33,7 +38,7 @@ public class LoginTests extends TestBase {
 		Assert.assertEquals(usuario, mainPage.retornaUsernameDasInformacoesDeLogin());
 	}
 	
-	@Test
+	//@Test
 	public void efetuarLoginComSenhaErrada() {
 		// Objects instances
 		loginPage = new LoginPage();
@@ -53,7 +58,7 @@ public class LoginTests extends TestBase {
 		Assert.assertEquals(mensagemErroEsperada, loginPage.retornaMensagemDeErro());
 	}
 	
-	@Test
+	//@Test
 	public void efetuarLoginComUsuarioNulo() {
 		// Objects instances
 		loginPage = new LoginPage();
@@ -99,7 +104,19 @@ public class LoginTests extends TestBase {
 
 		// Parameteres
 		String usuario = "administrator";
+//		String senhaTemp = "mantisbt";
 		String senha = UsuariosDBSteps.retornaSenhaDoUsuarioDB(usuario);
+		
+//		MessageDigest m;
+//		try {
+//			m = MessageDigest.getInstance("MD5");
+//			m.update(senhaTemp.getBytes(),0,senhaTemp.length());
+//			String senhaMD5 = new BigInteger(1,m.digest()).toString(16);
+//		} catch (NoSuchAlgorithmException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
 
 		// Test
 		loginPage.preenhcerUsuario(usuario);
@@ -109,5 +126,5 @@ public class LoginTests extends TestBase {
 
 		Assert.assertEquals(usuario, mainPage.retornaUsernameDasInformacoesDeLogin());
 	}
-
+	
 }
