@@ -3,6 +3,8 @@ package com.javaseleniumtemplate.utils;
 import java.sql.*;
 import java.util.ArrayList;
 
+import com.javaseleniumtemplate.GlobalParameters;
+
 public class DBUtils {
 
     public static ArrayList<String> getQueryResult(String query){
@@ -10,9 +12,9 @@ public class DBUtils {
         Connection connection = null;
 
         try {
-            Class.forName("UTILIZAR O DRIVER DO BANCO DE DADOS DA APLICAÇÃO");
+            Class.forName(GlobalParameters.DB_DRIVER);
             Statement stmt = null;
-            connection = DriverManager.getConnection("utilizar os parãmetros globais para montar a string de conexão de acordo com db utilizado");
+            connection = DriverManager.getConnection(GlobalParameters.DB_URL,GlobalParameters.DB_USER,GlobalParameters.DB_PASSWORD);
 
             stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(query);
@@ -53,9 +55,9 @@ public class DBUtils {
         Connection connection = null;
 
         try {
-            Class.forName("UTILIZAR O DRIVER DO BANCO DE DADOS DA APLICAÇÃO");
+        	Class.forName(GlobalParameters.DB_DRIVER);
             Statement stmt = null;
-            connection = DriverManager.getConnection("utilizar os parãmetros globais para montar a string de conexão de acordo com db utilizado");
+            connection = DriverManager.getConnection(GlobalParameters.DB_URL,GlobalParameters.DB_USER,GlobalParameters.DB_PASSWORD);
 
             stmt = connection.createStatement();
             stmt.executeQuery(query);
