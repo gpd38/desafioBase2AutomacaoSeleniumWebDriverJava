@@ -20,6 +20,7 @@ public class GlobalParameters {
     public static String DB_SID;
     public static String DB_USER;
     public static String DB_PASSWORD;
+    public static String DB_DRIVER;
 
     private Properties properties;
 
@@ -49,5 +50,6 @@ public class GlobalParameters {
         DB_SID = properties.getProperty("db.sid");
         DB_USER = properties.getProperty("db.user");
         DB_PASSWORD = properties.getProperty("db.password");
+        DB_DRIVER = properties.getProperty("db.driver");
     }
 }
