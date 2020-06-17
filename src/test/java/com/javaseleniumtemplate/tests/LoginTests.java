@@ -1,10 +1,7 @@
 package com.javaseleniumtemplate.tests;
 
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 
-import org.apache.commons.codec.digest.Md5Crypt;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -19,7 +16,7 @@ public class LoginTests extends TestBase {
 	MainPage mainPage;
 
 	// Tests
-	//@Test
+	@Test
 	public void efetuarLoginComSucesso() {
 		// Objects instances
 		loginPage = new LoginPage();
@@ -38,7 +35,7 @@ public class LoginTests extends TestBase {
 		Assert.assertEquals(usuario, mainPage.retornaUsernameDasInformacoesDeLogin());
 	}
 	
-	//@Test
+	@Test
 	public void efetuarLoginComSenhaErrada() {
 		// Objects instances
 		loginPage = new LoginPage();
@@ -58,7 +55,7 @@ public class LoginTests extends TestBase {
 		Assert.assertEquals(mensagemErroEsperada, loginPage.retornaMensagemDeErro());
 	}
 	
-	//@Test
+	@Test
 	public void efetuarLoginComUsuarioNulo() {
 		// Objects instances
 		loginPage = new LoginPage();
@@ -127,4 +124,26 @@ public class LoginTests extends TestBase {
 		Assert.assertEquals(usuario, mainPage.retornaUsernameDasInformacoesDeLogin());
 	}
 	
+	// Tests
+	// @Test
+	public void efetuarLoginComSucessoDataDriven() {
+		// Objects instances
+		loginPage = new LoginPage();
+		mainPage = new MainPage();
+		// ArrayList dadosLogin = lerDadosCSV();
+
+		// Parameteres
+		String usuario = "";// dadosLogin[0].toString();
+		String senha = "";// dadosLogin[1].toString();
+		String mensagemErroEsperada = "Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos.";
+
+		// Test
+		loginPage.preenhcerUsuario(usuario);
+		loginPage.clicarEmLogin();
+		loginPage.preencherSenha(senha);
+		loginPage.clicarEmLogin();
+
+		Assert.assertEquals(mensagemErroEsperada, loginPage.retornaMensagemDeErro());
+	}
+
 }
