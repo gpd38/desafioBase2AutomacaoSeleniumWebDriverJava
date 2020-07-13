@@ -32,7 +32,7 @@ public class LoginTests extends TestBase {
 		loginPage.preencherSenha(senha);
 		loginPage.clicarEmLogin();
 
-		Assert.assertEquals(usuario, mainPage.retornaUsernameDasInformacoesDeLogin());
+		Assert.assertEquals(usuario, mainPage.retornaUserNameDasInformacoesDeLogin());
 	}
 	
 	@Test
@@ -121,7 +121,7 @@ public class LoginTests extends TestBase {
 		loginPage.preencherSenha(senha);
 		loginPage.clicarEmLogin();
 
-		Assert.assertEquals(usuario, mainPage.retornaUsernameDasInformacoesDeLogin());
+		Assert.assertEquals(usuario, mainPage.retornaUserNameDasInformacoesDeLogin());
 	}
 	
 	// Tests
