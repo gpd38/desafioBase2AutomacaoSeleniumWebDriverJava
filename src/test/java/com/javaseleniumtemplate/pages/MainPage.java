@@ -9,7 +9,7 @@ public class MainPage extends PageBase {
     By reportIssueLink = By.xpath("//a[@href='/bug_report_page.php']");
 
     //Actions
-    public String retornaUsernameDasInformacoesDeLogin(){
+    public String retornaUserNameDasInformacoesDeLogin(){
         return getText(usernameLoginInfoTextArea);
     }
 
