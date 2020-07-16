@@ -1,10 +1,11 @@
 package com.javaseleniumtemplate.tests;
 
+import org.testng.annotations.Test;
+
 import com.javaseleniumtemplate.bases.TestBase;
 import com.javaseleniumtemplate.flows.LoginFlows;
 import com.javaseleniumtemplate.pages.BugReportPage;
 import com.javaseleniumtemplate.pages.MainPage;
-import org.testng.annotations.Test;
 
 public class ReportIssueTests extends TestBase {
     //Objects
@@ -13,7 +14,7 @@ public class ReportIssueTests extends TestBase {
     BugReportPage bugReportPage;
 
     //Tests
-    //@Test
+    @Test
     public void cadastrarNovaIssueComSucessoInformandoSomenteCamposObrigatorios(){
         //Objects instances
         loginFlows = new LoginFlows();
@@ -21,15 +22,15 @@ public class ReportIssueTests extends TestBase {
         bugReportPage = new BugReportPage();
 
         //Parameteres
-        String usuario = "templateautomacao";
-        String senha = "123456";
+        String usuario = "administrator";
+        String senha = "mantisbt";
         String categoria = "[All Projects] Teste";
-        String resumo = "Resumo teste autom√°tico ";
-        String descricao = "Descri√ß√£o teste autom√°tico";
+        String resumo = "Resumo teste autom·tico ";
+        String descricao = "DescriÁ„o teste autom·tico";
 
         //Test
         loginFlows.efetuarLogin(usuario, senha);
-        mainPage.clicarEmReportIssue();
+        mainPage.clickReportIssue();
         bugReportPage.selecionarCategoria(categoria);
         bugReportPage.preencherResumo(resumo);
         bugReportPage.preencherDescricao(descricao);

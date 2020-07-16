@@ -1,7 +1,5 @@
 package com.javaseleniumtemplate.tests;
 
-import java.util.ArrayList;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -32,7 +30,7 @@ public class LoginTests extends TestBase {
 		loginPage.preencherSenha(senha);
 		loginPage.clicarEmLogin();
 
-		Assert.assertEquals(usuario, mainPage.retornaUserNameDasInformacoesDeLogin());
+		Assert.assertEquals(usuario, mainPage.returnUserNameLoginInformation());
 	}
 	
 	@Test
@@ -121,7 +119,7 @@ public class LoginTests extends TestBase {
 		loginPage.preencherSenha(senha);
 		loginPage.clicarEmLogin();
 
-		Assert.assertEquals(usuario, mainPage.retornaUserNameDasInformacoesDeLogin());
+		Assert.assertEquals(usuario, mainPage.returnUserNameLoginInformation());
 	}
 	
 	// Tests
