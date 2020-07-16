@@ -9,7 +9,7 @@ public class MainPage extends PageBase {
 	// Mapping Side Menu
 	By myViewLink = By.xpath("//a[contains(.,'My View')]");
 	By viewIssuesLink = By.xpath("//a[contains(.,'View Issues')]");
-	//By reportIssueLink = By.xpath("//span[contains(.,'Report Issue')]");
+	// By reportIssueLink = By.xpath("//span[contains(.,'Report Issue')]");
 	By managerLink = By.xpath("//span[contains(.,'Manage')]");
 
 	// Mapping Top Menu
@@ -19,7 +19,7 @@ public class MainPage extends PageBase {
 	By myAccountLink = By.xpath("//a[contains(.,'My Account')]");
 	By logoutLink = By.xpath("//a[contains(.,'Logout')]");
 	By issueSearchField = By.xpath("//input[@name='bug_id']");
-	
+
 	// Actions
 	public String returnUserNameLoginInformation() {
 		return getText(usernameLoginInfoTextArea);
@@ -28,6 +28,5 @@ public class MainPage extends PageBase {
 	public void clickReportIssue() {
 		click(reportIssueLink);
 	}
-	
-	
+
 }

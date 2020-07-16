@@ -5,32 +5,46 @@ import org.openqa.selenium.By;
 import com.javaseleniumtemplate.bases.PageBase;
 
 public class BugReportPage extends PageBase {
-    
-	//Mapping
-    By categoryComboBox = By.name("category_id");
-    By summaryField = By.name("summary");
-    By descriptionField = By.name("description");
-    By uploadFileField = By.id("ufile[]");
-    By submitButton = By.xpath("//input[@type='submit']");
 
-    //Actions
-    public void selecionarCategoria(String categoria){
-        comboBoxSelectByVisibleText(categoryComboBox, categoria);
-    }
+	// Mapping Report Issue
+	By categoryComboBox = By.name("category_id");
+	By reproducibilityComboBox = By.id("reproducibility");
+	By severityComboBox = By.id("severity");
+	By priorityComboBox = By.id("priority");
+	By selectProfileComboBox = By.id("profile_id");
+	By createNewOptionProfile = By.xpath("//i[contains(@title,'+')]");
+	By newPlatformProfile = By.id("platform");
+	By newOsProfile = By.id("os");
+	By newOsVersionProfile = By.id("os_build");
+	By assignToComboBox = By.id("handler_id");
+	By summaryField = By.name("summary");
+	By descriptionField = By.name("description");
+	By stepToReproduceField = By.name("steps_to_reproduce");
+	By additionalInformationField = By.name("additional_info");
+	By tagField = By.name("tag_string");
+	By tagComboBox = By.id("tag_select");
+	// By uploadFileField = By.xpath(//span[contains(.,'Attach files by dragging & dropping, selecting or pasting them.')]");
+	By uploadFileField = By.id("ufile[]"); // Validar se está funcionando
+	By submitButton = By.xpath("//input[@value='Submit Issue']");
 
-    public void preencherResumo(String resumo){
-        sendKeys(summaryField, resumo);
-    }
+	// Actions
+	public void selecionarCategoria(String categoria) {
+		comboBoxSelectByVisibleText(categoryComboBox, categoria);
+	}
 
-    public void preencherDescricao(String descricao){
-        sendKeys(descriptionField, descricao);
-    }
+	public void preencherResumo(String resumo) {
+		sendKeys(summaryField, resumo);
+	}
 
-    public void InserirAnexo(String caminhoArquivo){
-        sendKeysWithoutWaitVisible(uploadFileField, caminhoArquivo);
-    }
+	public void preencherDescricao(String descricao) {
+		sendKeys(descriptionField, descricao);
+	}
 
-    public void ClicarEmSubmitReport(){
-        click(submitButton);
-    }
+	public void InserirAnexo(String caminhoArquivo) {
+		sendKeysWithoutWaitVisible(uploadFileField, caminhoArquivo);
+	}
+
+	public void ClicarEmSubmitReport() {
+		click(submitButton);
+	}
 }
