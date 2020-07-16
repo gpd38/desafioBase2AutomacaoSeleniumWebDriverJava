@@ -1,12 +1,16 @@
 package com.javaseleniumtemplate.bases;
 
+import java.lang.reflect.Method;
+
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+
 import com.javaseleniumtemplate.GlobalParameters;
 import com.javaseleniumtemplate.utils.DriverFactory;
 import com.javaseleniumtemplate.utils.ExtentReportUtils;
-import org.testng.ITestResult;
-import org.testng.annotations.*;
-
-import java.lang.reflect.Method;
 
 public class TestBase {
     @BeforeSuite
