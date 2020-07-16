@@ -4,10 +4,14 @@ import org.openqa.selenium.By;
 
 import com.javaseleniumtemplate.bases.PageBase;
 
-public class MinhaVisao extends PageBase {
-	
-	By botaoVerTarefaNaoAtribuida;
-	By botaoVerTarefaResolvida;
-	By botaoVerTarefaModificadoRecentemente;
+public class MyViewPage extends PageBase {
+
+	// Mapping Page Content
+	By buttonAssignedToMe = By.xpath("//a[contains(.,'Assigned to Me (Unresolved)')]");
+	By buttonUnassigned = By.xpath("//a[contains(.,'Unassigned')]");
+	By buttonReportedByMe = By.xpath("//a[contains(.,'Reported by Me')]");
+	By buttonResolved = By.xpath("//a[contains(.,'Resolved')]");
+	By buttonRecentlyModified = By.xpath("//a[contains(.,'Recently Modified (30 Days)')]");
+	By buttonMonitoredByMe = By.xpath("//a[@class='white'][contains(.,'Monitored by Me')]");
 
 }

@@ -4,12 +4,14 @@ import org.openqa.selenium.By;
 
 import com.javaseleniumtemplate.bases.PageBase;
 
-public class GerenciarAbas extends PageBase {
-	
-	By abaUsuario;
-	By abaProjeto;
-	By abaMarcadores;
-	By abaCamposPersonalizados;
-	By abaPerfisGlobais;
+public class ManagerPage extends PageBase {
+
+	// Mapping Manager Tab
+	By managerSiteInformation = By.xpath("");
+	By managerUsersTab = By.xpath("");
+	By managerProjectsTab = By.xpath("");
+	By managerTagsTab = By.xpath("");
+	By managerCustomFieldsTab = By.xpath("");
+	By managerGlobalProfilesTab = By.xpath("");
 
 }

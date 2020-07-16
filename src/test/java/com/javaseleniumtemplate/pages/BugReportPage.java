@@ -1,10 +1,12 @@
 package com.javaseleniumtemplate.pages;
 
-import com.javaseleniumtemplate.bases.PageBase;
 import org.openqa.selenium.By;
 
+import com.javaseleniumtemplate.bases.PageBase;
+
 public class BugReportPage extends PageBase {
-    //Mapping
+    
+	//Mapping
     By categoryComboBox = By.name("category_id");
     By summaryField = By.name("summary");
     By descriptionField = By.name("description");
