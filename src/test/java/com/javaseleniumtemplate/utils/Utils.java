@@ -1,8 +1,5 @@
 package com.javaseleniumtemplate.utils;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -12,6 +9,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
 
 public class Utils {

@@ -1,7 +1,8 @@
 package com.javaseleniumtemplate.utils;
 
-import com.javaseleniumtemplate.GlobalParameters;
 import org.openqa.selenium.WebDriver;
+
+import com.javaseleniumtemplate.GlobalParameters;
 
 public class DriverFactory {
 

@@ -1,10 +1,16 @@
 package com.javaseleniumtemplate.utils;
 
-import com.aventstack.extentreports.*;
+import java.io.IOException;
+
+import org.testng.ITestResult;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.MediaEntityModelProvider;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.javaseleniumtemplate.GlobalParameters;
-import org.testng.ITestResult;
-import java.io.IOException;
 
 public class ExtentReportUtils {
     public static ExtentReports EXTENT_REPORT = null;
