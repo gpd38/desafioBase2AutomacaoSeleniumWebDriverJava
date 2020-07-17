@@ -46,25 +46,25 @@ Sugestão: fazer o login usando Javascript ao invés do código do Selenium.
 
 Serão automatizadas 68 funcionalidades divididas nas seguintes telas.
 
-- Tela Login - 3/5
-	x efetuarLoginComSucesso
-	x efetuarLoginComSenhaErrada
-	x efetuarLoginComUsuarioNulo
+- Tela Login - 5
+    - efetuarLoginComSucesso
+	- efetuarLoginComSenhaErrada
+	- efetuarLoginComUsuarioNulo
 	- perdeuSuaSenha
 	- efetuarLoginComSucessoSenhaRetornadaDoDB
-- Tela Minha Conta - 8/8
-	x acessarPaginaMinhaVisao
-	x acessarPaginaVerTarefas
-	x acessarPaginaCriarTarefas
-	x acessarPaginaGerenciar
-	x acessarMinhaConta
-	x atualizarMinhaSenha
-	x atualizarMeuEmail
-	x efetuarLogout
-- Tela Minha Visão - 2/2
-	x existeTarefaRelatadaPorMim
-	x existeBotaoVerTarefas
-- Tela Ver Tarefas - 18/18
+- Tela Minha Conta - 8
+	- acessarPaginaMinhaVisao
+	- acessarPaginaVerTarefas
+	- acessarPaginaCriarTarefas
+	- acessarPaginaGerenciar
+	- acessarMinhaConta
+	- atualizarMinhaSenha
+	- atualizarMeuEmail
+	- efetuarLogout
+- Tela Minha Visão - 2
+	- existeTarefaRelatadaPorMim
+	;existeBotaoVerTarefas
+- Tela Ver Tarefas - 18
 	- apagarMarcador
 	- resolverTarefa
 	- alterarGravidadeTarefa
@@ -83,7 +83,7 @@ Serão automatizadas 68 funcionalidades divididas nas seguintes telas.
 	- pesquisarTarefasInexistentes
 	- pesquisarTarefasExistentes
 	- validarExclusaoTotalDasTarefas
-- Tela Criar Tarefa - 8/8
+- Tela Criar Tarefa - 8
 	- createIssueWithAllCompleteFields
 	- createIssueWithRequiredFields
 	- validateFieldRequiredDescription
@@ -92,38 +92,38 @@ Serão automatizadas 68 funcionalidades divididas nas seguintes telas.
 	- createIssueDuplicated
 	- validateAssignUserIssue
 	- validateSizeAttachedFile
-- Tela Gerenciar - 27/27
-	- validarAcessoAbaUsuario
+- Tela Gerenciar - 27
+    - validarAcessoAbaUsuario
 	- validarAcessoAbaProjetos
 	- validarAcessoAbaMarcadores
 	- validarAcessoAbaPerfil
 	- validarAcessoAbaGerenciarConfiguracoes
 	- validarAcessoAbaGerenciarPlugins
-	+ Gerenciar usuários - 5/5
-	    - criarNovoUsuario
-	    - criarUsuarioRepetido
-	    - editarUsuario
-	    - desativarUsuario
-	    - filtrarUsuariosDesativados
-  	+ Gerenciar projetos - 8/8
-	    - criarCategoria
-	    - editarCategoria
-	    - deletarCategoria
-	    - criarProjeto
-	    - criarProjetoRepetido
-	    - editarProjeto
-	    - criarSubProjeto
-	    - editarSubProjeto
-  	+ Gerenciar marcadores - 4/4
-	    - criarNovoMarcador
-	    - deletarMarcador
-	    - criarMarcadorRepetido
-	    - editarMarcador
-  	+ Gerenciar perfis - 4/4
-	    - criarNovoPerfil
-	    - deletarPerfil
-	    - editarPerfil
-	    - criarPerfilRepetido
+- Aba Gerenciar usuários - 5
+    - criarNovoUsuario
+    - criarUsuarioRepetido
+    - editarUsuario
+    - desativarUsuario
+    - filtrarUsuariosDesativados
+- Aba Gerenciar projetos - 8
+    - criarCategoria
+    - editarCategoria
+    - deletarCategoria
+    - criarProjeto
+    - criarProjetoRepetido
+    - editarProjeto
+    - criarSubProjeto
+    - editarSubProjeto
+- Aba Gerenciar marcadores - 4
+    - criarNovoMarcador
+    - deletarMarcador
+    - criarMarcadorRepetido
+    - editarMarcador
+- Aba Gerenciar perfis - 4
+    - criarNovoPerfil
+    - deletarPerfil
+    - editarPerfil
+    - criarPerfilRepetido
 
 #### Dados do projeto
 
