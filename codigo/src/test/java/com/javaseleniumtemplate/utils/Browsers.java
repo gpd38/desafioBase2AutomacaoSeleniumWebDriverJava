@@ -22,7 +22,7 @@ public class Browsers {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("no-sandbox");
         chromeOptions.addArguments("--allow-running-insecure-content");
-        chromeOptions.addArguments("--lang=pt-BR");
+        chromeOptions.addArguments("--lang=en-EN");
         chromeOptions.addArguments("download.default_directory", downloadPath);
         return new ChromeDriver(chromeOptions);
     }
@@ -31,7 +31,7 @@ public class Browsers {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("no-sandbox");
         chromeOptions.addArguments("--allow-running-insecure-content");
-        chromeOptions.addArguments("--lang=pt-BR");
+        chromeOptions.addArguments("--lang=en-EN");
         chromeOptions.addArguments("download.default_directory", downloadPath);
 
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();

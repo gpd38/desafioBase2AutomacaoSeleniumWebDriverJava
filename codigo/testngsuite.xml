@@ -3,11 +3,11 @@
     <test name="TestNgMavenTest-Login">
         <classes>
             <class name="com.javaseleniumtemplate.tests.LoginTests"/>
-        </classes>
-    </test>
-    <test name="TestNgMavenTest-Report">
-        <classes>
+            <class name="com.javaseleniumtemplate.tests.MyAccountTests"/>
+            <class name="com.javaseleniumtemplate.tests.MyViewTests"/>
+            <class name="com.javaseleniumtemplate.tests.ViewIssuesTests"/>
             <class name="com.javaseleniumtemplate.tests.ReportIssueTests"/>
+            <class name="com.javaseleniumtemplate.tests.ManagerTests"/>
         </classes>
     </test>
 </suite>

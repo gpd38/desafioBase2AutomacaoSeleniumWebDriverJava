@@ -32,94 +32,117 @@ Sugestão: fazer o login usando Javascript ao invés do código do Selenium.
 
 | Item Desafio   | Status do projeto |
 | -------------- | ----------------- |
-| Nº 1 		       | Não Iniciado      |
-| Nº 2 		       | Não Iniciado      |
-| Nº 3 		       | Não Iniciado      |
-| Nº 4 		       | Não Iniciado      |
-| Nº 5 		       | Não Iniciado      |
-| Nº 6 		       | Não Iniciado      |
-| Nº 7 		       | Não Iniciado      |
-| Nº 8 		       | Não Iniciado      |
-| Nº 9 		       | Não Iniciado      |
+| Nº 1           | Não Iniciado      |
+| Nº 2           | Não Iniciado      |
+| Nº 3           | Não Iniciado      |
+| Nº 4           | Não Iniciado      |
+| Nº 5           | Não Iniciado      |
+| Nº 6           | Não Iniciado      |
+| Nº 7           | Não Iniciado      |
+| Nº 8           | Não Iniciado      |
+| Nº 9           | Não Iniciado      |
 
 #### Funcionalidades automatizadas
 
-Serão automatizadas 53 funcionalidades divididas nas seguintes telas.
+Serão automatizadas 68 funcionalidades divididas nas seguintes telas.
 
-- Tela Login - 3
-  - TestCaseLoginSucesso 
-  - TestCaseLoginFalha 
-  - TestCasePerdeuSenha 
-- Tela Minha Visão - 6
-  - TestCaseMinhaVisaoAtribuidosAMim
-  - TestCaseMinhaVisaoNaoAtribuidos
-  - TestCaseMinhaVisaoRelatadosPorMim
-  - TestCaseMinhaVisaoResolvidos
-  - TestCaseMinhaVisaoModificadosRecentemente
-  - TestCaseMinhaVisaoMonitoradosPorMim
-- Tela minha Conta - 1
-  - TestCaseAcessarMinhaConta
-- Tela Ver Tarefas - 13
-  - TestCaseVisualizarTarefaCadastrada
-  - TestCaseMoverTarefa
-  - TestCaseCopiarTarefa
-  - TestCaseAtribuirTarefa
-  - TestCaseApagarTarefa
-  - TestCaseResolverTarefa
-  - TestCaseAtualizarPrioridadeTarefa
-  - TestCaseAtualizarGravidadeTarefa
-  - TestCaseAtualizarStatusTarefa
-  - TestCaseAtualizarCategoriaTarefa
-  - TestCaseSalvarFiltroAtual
-  - TestCaseFiltrarPorCategoria
-  - TestCaseFiltrarPorGravidade
-- Tela Criar Tarefa - 5
-  - TestCaseCriarNovaTarefa
-  - TestCaseValidarCriarMaisTarefas
-  - TestCaseValidarCampoResumoObrigatorio
-  - TestCaseValidarCampoDescricaoObrigatorio
-  - TestCaseValidarTamanhoArquivoAnexo
-- Tela Gerenciar
-  - Gerenciar usuários - 6
-    - TestCaseCriarNovoUsuario
-    - TestCaseCriarUsuarioRepetido
-    - TestCaseEditarUsuario
-    - TestCaseDeletarUsuario
-    - TestCaseDesativarUsuario
-    - TestCaseFiltrarUsuariosDesativados
-  - Gerenciar projetos - 11
-    - TestCaseCriarCategoria
-    - TestCaseEditarCategoria
-    - TestCaseDeletarCategoria
-    - TestCaseCriarProjeto
-    - TestCaseCriarProjetoRepetido
-    - TestCaseEditarProjeto
-    - TestCaseDeletarProjeto
-    - TestCaseCriarSubProjeto
-    - TestCaseEditarSubProjeto
-    - TestCaseAdicionarUsuariosAoProjeto
-    - TestCaseRemoverUsuariosDoProjeto
-  - Gerenciar marcadores - 4
-    - TestCaseCriarNovoMarcador
-    - TestCaseDeletarMarcador
-    - TestCaseCriarMarcadorRepetido
-    - TestCaseEditarMarcador
-  - Gerenciar perfis - 4
-    - TestCaseCriarNovoPerfil
-    - TestCaseDeletarPerfil
-    - TestCaseEditarPerfil
-    - TestCaseCriarPerfilRepetido
+- Tela Login - 3/5
+	x efetuarLoginComSucesso
+	x efetuarLoginComSenhaErrada
+	x efetuarLoginComUsuarioNulo
+	- perdeuSuaSenha
+	- efetuarLoginComSucessoSenhaRetornadaDoDB
+- Tela Minha Conta - 8/8
+	x acessarPaginaMinhaVisao
+	x acessarPaginaVerTarefas
+	x acessarPaginaCriarTarefas
+	x acessarPaginaGerenciar
+	x acessarMinhaConta
+	x atualizarMinhaSenha
+	x atualizarMeuEmail
+	x efetuarLogout
+- Tela Minha Visão - 2/2
+	x existeTarefaRelatadaPorMim
+	x existeBotaoVerTarefas
+- Tela Ver Tarefas - 18/18
+	- apagarMarcador
+	- resolverTarefa
+	- alterarGravidadeTarefa
+	- alterarStatusRetornoDaTarefa
+	- alterarStatusAtribuidoDaTarefa
+	- alterarStatusAdmitidoDaTarefa
+	- alterarStatusResolvidoDaTarefa
+	- alterarStatusFechadoDaTarefa
+	- alterarPrioridadeDaTarefa
+	- moverTarefa
+	- copiarTarefa
+	- TestCaseAtribuirTarefa
+	- TestCaseApagarTarefa
+	- fecharTarefa
+	- validarAcessoTelaVerTarefas
+	- pesquisarTarefasInexistentes
+	- pesquisarTarefasExistentes
+	- validarExclusaoTotalDasTarefas
+- Tela Criar Tarefa - 8/8
+	- createIssueWithAllCompleteFields
+	- createIssueWithRequiredFields
+	- validateFieldRequiredDescription
+	- validateFieldRequiredSummary
+	- validateFieldRequiredCategory
+	- createIssueDuplicated
+	- validateAssignUserIssue
+	- validateSizeAttachedFile
+- Tela Gerenciar - 27/27
+	- validarAcessoAbaUsuario
+	- validarAcessoAbaProjetos
+	- validarAcessoAbaMarcadores
+	- validarAcessoAbaPerfil
+	- validarAcessoAbaGerenciarConfiguracoes
+	- validarAcessoAbaGerenciarPlugins
+	+ Gerenciar usuários - 5/5
+	    - criarNovoUsuario
+	    - criarUsuarioRepetido
+	    - editarUsuario
+	    - desativarUsuario
+	    - filtrarUsuariosDesativados
+  	+ Gerenciar projetos - 8/8
+	    - criarCategoria
+	    - editarCategoria
+	    - deletarCategoria
+	    - criarProjeto
+	    - criarProjetoRepetido
+	    - editarProjeto
+	    - criarSubProjeto
+	    - editarSubProjeto
+  	+ Gerenciar marcadores - 4/4
+	    - criarNovoMarcador
+	    - deletarMarcador
+	    - criarMarcadorRepetido
+	    - editarMarcador
+  	+ Gerenciar perfis - 4/4
+	    - criarNovoPerfil
+	    - deletarPerfil
+	    - editarPerfil
+	    - criarPerfilRepetido
 
 #### Dados do projeto
 
-
-#### Problema x Solução
 
 #### Extras
 
 Agradeço ao [Saymowan](https://github.com/saymowan/docker-mantis-mariadb) por ter disponibilizado um tutorial para instalação do mantis via docker, pois foi importante para a construção deste projeto.
 
 A linguagem de configuração da aplicação mantis está em inglês (EN), por tanto as validações podem ser divergentes se o teste for executado em português (PT-BR)
+
+#### Problema x Solução
+1) Running TestSuite [TestNGContentHandler] [WARN] It is strongly recommended to add "<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >" at the top of your file, otherwise TestNG may fail or not work as expected.
+  - Inserir no arquivo testngsuite.xml: <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+#### Dúvidas
+1) Porque TestNG e não JUnit ?
+  - JUnit nao tem recurso simples para adquirirmos o nome do teste, detalhes do teste para colocar no relatório ExtentReports. Já o TestNG, ele permite isso facilmente.
+2) Porque criar separado MainPage e LoginPage ? 
+  - ...
 
 #### Bibliografia
 

@@ -26,8 +26,14 @@ public class BugReportPage extends PageBase {
 	// By uploadFileField = By.xpath(//span[contains(.,'Attach files by dragging & dropping, selecting or pasting them.')]");
 	By uploadFileField = By.id("ufile[]"); // Validar se está funcionando
 	By submitButton = By.xpath("//input[@value='Submit Issue']");
+	By messageRetornoSuccess = By.xpath("//p[contains(.,'Operation successful.')]");
+	By selectProjectAccessBugReport = By.xpath("//input[@value='Select Project']");
 
 	// Actions
+	public void selecionarProjetoInicial() {
+		click(selectProjectAccessBugReport);
+	}
+	
 	public void selecionarCategoria(String categoria) {
 		comboBoxSelectByVisibleText(categoryComboBox, categoria);
 	}
@@ -47,4 +53,9 @@ public class BugReportPage extends PageBase {
 	public void ClicarEmSubmitReport() {
 		click(submitButton);
 	}
+	
+	public String returnMessageSuccess() {
+		return getText(messageRetornoSuccess);
+	}
+	
 }

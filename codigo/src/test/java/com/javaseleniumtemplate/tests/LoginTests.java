@@ -61,7 +61,7 @@ public class LoginTests extends TestBase {
 
 		// Parameteres
 		String usuario = "   ";
-		String mensagemErroEsperada = "Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos."; 
+		String mensagemErroEsperada = "Your account may be disabled or blocked or the username/password you entered is incorrect."; 
 
 		// Test
 		loginPage.preenhcerUsuario(usuario);
@@ -92,7 +92,7 @@ public class LoginTests extends TestBase {
 	}
 
 	//@Test
-	public void efetuarLoginComSucesso_SenhaRetornadaDoDB() {
+	public void efetuarLoginComSucessoSenhaRetornadaDoDB() {
 		// Objects instances
 		loginPage = new LoginPage();
 		mainPage = new MainPage();
@@ -122,7 +122,6 @@ public class LoginTests extends TestBase {
 		Assert.assertEquals(usuario, mainPage.returnUserNameLoginInformation());
 	}
 	
-	// Tests
 	// @Test
 	public void efetuarLoginComSucessoDataDriven() {
 		// Objects instances
