@@ -32,12 +32,12 @@ Sugestão: fazer o login usando Javascript ao invés do código do Selenium.
 
 | Item Desafio   | Status do projeto |
 | -------------- | ----------------- |
-| Nº 1           | Não Iniciado      |
-| Nº 2           | Não Iniciado      |
-| Nº 3           | Não Iniciado      |
-| Nº 4           | Não Iniciado      |
-| Nº 5           | Não Iniciado      |
-| Nº 6           | Não Iniciado      |
+| Nº 1           | Em andamento      |
+| Nº 2           | Sucesso    		 |
+| Nº 3           | Em andamento      |
+| Nº 4           | Em andamento      |
+| Nº 5           | Sucesso           |
+| Nº 6           | Sucesso           |
 | Nº 7           | Não Iniciado      |
 | Nº 8           | Não Iniciado      |
 | Nº 9           | Não Iniciado      |
@@ -124,9 +124,6 @@ Serão automatizadas 68 funcionalidades divididas nas seguintes telas.
     - deletarPerfil
     - editarPerfil
     - criarPerfilRepetido
-
-#### Dados do projeto
-
 
 #### Extras
 

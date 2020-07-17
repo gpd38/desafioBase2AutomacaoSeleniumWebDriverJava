@@ -28,5 +28,13 @@ public class MainPage extends PageBase {
 	public void clickReportIssue() {
 		click(reportIssueLink);
 	}
+	
+	public void clickMyAccount() {
+		click(myAccountLink);
+	}
+	
+	public void clickLogout() {
+		click(logoutLink);
+	}
 
 }

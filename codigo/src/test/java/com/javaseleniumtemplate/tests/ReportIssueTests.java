@@ -1,10 +1,8 @@
 package com.javaseleniumtemplate.tests;
 
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 import com.javaseleniumtemplate.bases.TestBase;
-import com.javaseleniumtemplate.flows.LoginFlows;
 import com.javaseleniumtemplate.pages.BugReportPage;
 import com.javaseleniumtemplate.pages.LoginPage;
 import com.javaseleniumtemplate.pages.MainPage;
@@ -16,7 +14,7 @@ public class ReportIssueTests extends TestBase {
 	BugReportPage bugReportPage;
 
 	// Tests
-	@Test
+	//@Test
 	public void createIssueWithRequiredFields() {
 		// Objects instances
 		loginPage = new LoginPage();
