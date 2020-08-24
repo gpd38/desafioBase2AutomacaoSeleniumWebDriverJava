@@ -25,7 +25,7 @@ public class LoginTests extends TestBase {
 	Utils util;
 
 	// Tests
-	@Test
+	//@Test
 	public void efetuarLoginComSucesso() {
 		// Objects instances
 		loginPage = new LoginPage();
@@ -44,7 +44,7 @@ public class LoginTests extends TestBase {
 		Assert.assertEquals(usuario, mainPage.returnUserNameLoginInformation());
 	}
 
-	@Test
+	//@Test
 	public void efetuarLoginComSenhaErrada() {
 		// Objects instances
 		loginPage = new LoginPage();
@@ -64,7 +64,7 @@ public class LoginTests extends TestBase {
 		Assert.assertEquals(mensagemErroEsperada, loginPage.retornaMensagemDeErro());
 	}
 
-	@Test
+	//@Test
 	public void efetuarLoginComUsuarioNulo() {
 		// Objects instances
 		loginPage = new LoginPage();
@@ -79,7 +79,7 @@ public class LoginTests extends TestBase {
 		Assert.assertEquals(mensagemErroEsperada, loginPage.retornaMensagemDeErro());
 	}
 
-	@Test
+	//@Test
 	public void perdeuSuaSenha() {
 		// Objects instances
 		loginPage = new LoginPage();
@@ -134,7 +134,7 @@ public class LoginTests extends TestBase {
 	 * Precisa corrigir erro de celula vazia para usuario e senha Precisa corrigir o
 	 * erro quando a celula é número inteiro - senha
 	 */
-	@Test
+	//@Test
 	public void efetuarLoginComSucessoDataDriven() {
 		// Objects instances
 		loginPage = new LoginPage();

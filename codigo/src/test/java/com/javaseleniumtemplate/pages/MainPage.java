@@ -16,7 +16,7 @@ public class MainPage extends PageBase {
 	By reportIssueLink = By.xpath("//a[@href='/bug_report_page.php']");
 	By usernameLoginInfoTextArea = By.xpath("//span[@class='user-info']");
 	By inviteUserLink = By.xpath("//a[contains(.,'Invite Users')]");
-	By myAccountLink = By.xpath("//a[contains(.,'My Account')]");
+	By myAccountLink = By.xpath("//a[contains(.,'My Account')]");//a[@href='/account_page.php']/i
 	By logoutLink = By.xpath("//a[contains(.,'Logout')]");
 	By issueSearchField = By.xpath("//input[@name='bug_id']");
 
