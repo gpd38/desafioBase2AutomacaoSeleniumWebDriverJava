@@ -35,26 +35,6 @@ public class MyAccountTests extends TestBase {
 		Assert.assertEquals("administrator", accountPage.getNomeUsuario());
 	}
 
-	@Test
-	public void efetuarLogout() throws Exception {
-		// Objects instances
-		loginPage = new LoginPage();
-		mainPage = new MainPage();
-
-		// Parameteres
-		String usuario = "administrator";
-		String senha = "mantisbt";
-
-		// Test
-		loginPage.preenhcerUsuario(usuario);
-		loginPage.clicarEmLogin();
-		loginPage.preencherSenha(senha);
-		loginPage.clicarEmLogin();
-		mainPage.clickLogout();
-
-		Assert.assertTrue(loginPage.existeBotaoEntrar());
-	}
-
 	// @Test
 	public void atualizarSenha() {
 		Assert.fail("Not implemented");
@@ -83,6 +63,26 @@ public class MyAccountTests extends TestBase {
 	// @Test
 	public void acessarPaginaGerenciar() {
 		Assert.fail("Not implemented");
+	}
+
+	@Test
+	public void efetuarLogout() throws Exception {
+		// Objects instances
+		loginPage = new LoginPage();
+		mainPage = new MainPage();
+
+		// Parameteres
+		String usuario = "administrator";
+		String senha = "mantisbt";
+
+		// Test
+		loginPage.preenhcerUsuario(usuario);
+		loginPage.clicarEmLogin();
+		loginPage.preencherSenha(senha);
+		loginPage.clicarEmLogin();
+		mainPage.clickLogout();
+
+		Assert.assertTrue(loginPage.existeBotaoEntrar());
 	}
 
 }

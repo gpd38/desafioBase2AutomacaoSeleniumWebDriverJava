@@ -44,26 +44,36 @@ Sugestão: fazer o login usando Javascript ao invés do código do Selenium.
 
 #### Funcionalidades automatizadas
 
-Serão automatizadas 68 funcionalidades divididas nas seguintes telas.
+Serão automatizadas xx funcionalidades divididas nas seguintes telas.
 
-- Tela Login - 5
+- Tela Criar Tarefa - 8
+	- createIssueWithAllCompleteFields
+	- createIssueWithRequiredFields
+	- validateFieldRequiredDescription
+	- validateFieldRequiredSummary
+	- validateFieldRequiredCategory
+	- createIssueDuplicated
+	- validateAssignUserIssue
+	- validateSizeAttachedFile
+- LoginTest - 6
     - efetuarLoginComSucesso
 	- efetuarLoginComSenhaErrada
 	- efetuarLoginComUsuarioNulo
 	- perdeuSuaSenha
 	- efetuarLoginComSucessoSenhaRetornadaDoDB
+	- efetuarLoginComSucessoDataDriven
 - Tela Minha Conta - 8
+	- acessarMinhaConta
+	- atualizarSenha
+	- atualizarEmail
 	- acessarPaginaMinhaVisao
 	- acessarPaginaVerTarefas
 	- acessarPaginaCriarTarefas
 	- acessarPaginaGerenciar
-	- acessarMinhaConta
-	- atualizarMinhaSenha
-	- atualizarMeuEmail
 	- efetuarLogout
 - Tela Minha Visão - 2
 	- existeTarefaRelatadaPorMim
-	;existeBotaoVerTarefas
+	- existeBotaoVerTarefas
 - Tela Ver Tarefas - 18
 	- apagarMarcador
 	- resolverTarefa
@@ -83,15 +93,6 @@ Serão automatizadas 68 funcionalidades divididas nas seguintes telas.
 	- pesquisarTarefasInexistentes
 	- pesquisarTarefasExistentes
 	- validarExclusaoTotalDasTarefas
-- Tela Criar Tarefa - 8
-	- createIssueWithAllCompleteFields
-	- createIssueWithRequiredFields
-	- validateFieldRequiredDescription
-	- validateFieldRequiredSummary
-	- validateFieldRequiredCategory
-	- createIssueDuplicated
-	- validateAssignUserIssue
-	- validateSizeAttachedFile
 - Tela Gerenciar - 27
     - validarAcessoAbaUsuario
 	- validarAcessoAbaProjetos
