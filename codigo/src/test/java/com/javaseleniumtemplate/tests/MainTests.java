@@ -6,7 +6,7 @@ import com.javaseleniumtemplate.bases.TestBase;
 import com.javaseleniumtemplate.pages.LoginPage;
 import com.javaseleniumtemplate.pages.MainPage;
 
-public class MyViewTests extends TestBase {
+public class MainTests extends TestBase {
 
 	LoginPage loginPage;
 	MainPage mainPage;

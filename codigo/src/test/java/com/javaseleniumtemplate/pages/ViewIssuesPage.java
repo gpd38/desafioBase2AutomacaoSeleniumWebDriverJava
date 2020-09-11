@@ -20,5 +20,7 @@ public class ViewIssuesPage extends PageBase {
 	By checkSelectAllIssue = By.xpath("//span[@class='lbl padding-6']");
 	By selectActionIssue = By.xpath("//select[@name='action']");
 	By buttonOkActionIssue = By.xpath("//input[@value='OK']");
+	
+	// Actions
 
 }

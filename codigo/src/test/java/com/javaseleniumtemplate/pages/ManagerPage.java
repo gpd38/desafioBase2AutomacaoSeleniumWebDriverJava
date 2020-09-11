@@ -53,5 +53,7 @@ public class ManagerPage extends PageBase {
 	By customField = By.xpath("//input[@name='name']");
 	By buttonNewCustomField = By.xpath("//input[@value='New Custom Field']");
 	By buttonDeletCustomField = By.xpath("//input[@value='Delete Custom Field']");
+	
+	// Actions
 
 }
