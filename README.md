@@ -33,11 +33,11 @@ Sugestão: fazer o login usando Javascript ao invés do código do Selenium.
 | Item Desafio   | Status do projeto |
 | -------------- | ----------------- |
 | Nº 1           | Em andamento      |
-| Nº 2           | Sucesso    		 |
+| Nº 2           | Em Andamento 	 |
 | Nº 3           | Em andamento      |
 | Nº 4           | Em andamento      |
-| Nº 5           | Sucesso           |
-| Nº 6           | Sucesso           |
+| Nº 5           | Em andamento      |
+| Nº 6           | Em andamento      |
 | Nº 7           | Não Iniciado      |
 | Nº 8           | Não Iniciado      |
 | Nº 9           | Não Iniciado      |
