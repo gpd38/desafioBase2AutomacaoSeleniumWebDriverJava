@@ -4,6 +4,27 @@ Projeto da empresa Base2 Tecnologia para os funcionários aprenderem e testarem 
 
 A aplicação a ser automatiada será o mantis.
 
+<p align="center">
+	<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava">
+	<img alt="GitHub" src="https://img.shields.io/github/license/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava">
+	<img alt="GitHub language count" src="https://img.shields.io/github/languages/count/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava">
+</p>
+
+<p align="center">
+	<a href="#Desafio Parte1">Desafio parte 1</a> •
+	<a href="#Desafio Parte2">Desafio parte 2</a> •
+	<a href="#Desafio Parte3">Desafio parte 3</a> •
+	<a href="#Andamento do desafio">Andamento do desafio</a> •
+	<a href="#Funcionalidades automatizadas">Funcionalidades automatizadas</a> •
+</p>
+<p>
+	<a href="#Extras">Extras</a> •
+	<a href="#Problema x Solução">Problema x Solução</a> •
+	<a href="#Dúvidas">Dúvidas</a> •
+	<a href="#Bibliografia">Bibliografia</a> •
+	<a href="#Licença">Licença</a>
+</p>
+
 #### Desafio parte 1
 
 1. Implementar 50 scripts de testes que manipulem uma aplicação web (sugestões: Mantis ou TestLink) com Page Objects.
@@ -139,8 +160,26 @@ A linguagem de configuração da aplicação mantis está em inglês (EN), por t
 #### Dúvidas
 1) Porque TestNG e não JUnit ?
   - JUnit nao tem recurso simples para adquirirmos o nome do teste, detalhes do teste para colocar no relatório ExtentReports. Já o TestNG, ele permite isso facilmente.
-2) Porque criar separado MainPage e LoginPage ? 
+2) ... 
   - ...
+
+### Licença
+
+Este projeto esta sobe a licença [MIT](./LICENSE).
+
+### Autor
+
+<table>
+	<tr>
+		<td align="center">
+			<a href="https://www.linkedin.com/in/gustavopereiradias">
+				<img style="border-radius: 50%;" src="https://raw.githubusercontent.com/gpd38/cursoNutrorAutomacaoWeb/master/img/gustavo.png" width="100px;" alt=""/>
+				<br /><b>Gustavo Pereira Dias</b>
+			</a>
+			<br />
+		</td>
+	</tr>
+</table>
 
 #### Bibliografia
 
