@@ -13,16 +13,18 @@ A aplicação a ser automatiada será o mantis.
 <p align="center">
 	<a href="#Desafio Parte1">Desafio parte 1</a> •
 	<a href="#Desafio Parte2">Desafio parte 2</a> •
-	<a href="#Desafio Parte3">Desafio parte 3</a> •
-	<a href="#Andamento do desafio">Andamento do desafio</a> •
-	<a href="#Funcionalidades automatizadas">Funcionalidades automatizadas</a> •
+	<a href="#Desafio Parte3">Desafio parte 3</a>
 </p>
-<p>
+<p align="center">
+	<a href="#Andamento do desafio">Andamento do desafio</a> •
+	<a href="#Funcionalidades automatizadas">Funcionalidades automatizadas</a>
+</p>
+<p align="center">
 	<a href="#Extras">Extras</a> •
-	<a href="#Problema x Solução">Problema x Solução</a> •
 	<a href="#Dúvidas">Dúvidas</a> •
-	<a href="#Bibliografia">Bibliografia</a> •
-	<a href="#Licença">Licença</a>
+	<a href="#Licença">Licença</a> •
+	<a href="#Autor">Autor</a> •
+	<a href="#Bibliografia">Bibliografia</a>
 </p>
 
 #### Desafio parte 1
@@ -41,7 +43,6 @@ Java: normalmente utiliza-se a classe Properties e cria-se um arquivo chamado en
 5. Gravar screenshots ou vídeo automaticamente dos casos de testes.
 6. O projeto deverá gerar um relatório de testes automaticamente com screenshots ou vídeos embutidos. Sugestões: Allure Report ou ExtentReport.
 7. A massa de testes deve ser preparada neste projeto, seja com scripts carregando massa nova no BD ou com restore de banco de dados.
-
 
 #### Desafio parte 3
 
@@ -153,10 +154,6 @@ Agradeço ao [Saymowan](https://github.com/saymowan/docker-mantis-mariadb) por t
 
 A linguagem de configuração da aplicação mantis está em inglês (EN), por tanto as validações podem ser divergentes se o teste for executado em português (PT-BR)
 
-#### Problema x Solução
-1) Running TestSuite [TestNGContentHandler] [WARN] It is strongly recommended to add "<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >" at the top of your file, otherwise TestNG may fail or not work as expected.
-  - Inserir no arquivo testngsuite.xml: <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-
 #### Dúvidas
 1) Porque TestNG e não JUnit ?
   - JUnit nao tem recurso simples para adquirirmos o nome do teste, detalhes do teste para colocar no relatório ExtentReports. Já o TestNG, ele permite isso facilmente.
@@ -173,7 +170,7 @@ Este projeto esta sobe a licença [MIT](./LICENSE).
 	<tr>
 		<td align="center">
 			<a href="https://www.linkedin.com/in/gustavopereiradias">
-				<img style="border-radius: 50%;" src="https://raw.githubusercontent.com/gpd38/cursoNutrorAutomacaoWeb/master/img/gustavo.png" width="100px;" alt=""/>
+				<img style="border-radius: 50%;" src="https://raw.githubusercontent.com/gpd38/cursoNutrorAutomacaoWeb/master/img/gustavo.png" width="100px;" alt="fotografia do autor do github"/>
 				<br /><b>Gustavo Pereira Dias</b>
 			</a>
 			<br />
@@ -193,3 +190,7 @@ Este projeto esta sobe a licença [MIT](./LICENSE).
 8. https://www.seleniumhq.org/docs/03_webdriver.jsp
 9. https://mvnrepository.com/
 10. http://www.automationtestinghub.com/
+
+#### Problema x Solução
+1) Running TestSuite [TestNGContentHandler] [WARN] It is strongly recommended to add "<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >" at the top of your file, otherwise TestNG may fail or not work as expected.
+  - Inserir no arquivo testngsuite.xml: <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
