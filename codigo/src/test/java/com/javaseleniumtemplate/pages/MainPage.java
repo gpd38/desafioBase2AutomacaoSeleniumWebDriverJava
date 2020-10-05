@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import com.javaseleniumtemplate.bases.PageBase;
 
 public class MainPage extends PageBase {
+	
+	//MainPage = MyViewPage
 
 	// Mapping Side Menu
 	By myViewLink = By.xpath("//a[contains(.,'My View')]");

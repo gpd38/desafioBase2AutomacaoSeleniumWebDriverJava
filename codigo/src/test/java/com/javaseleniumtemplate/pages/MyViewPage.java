@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import com.javaseleniumtemplate.bases.PageBase;
 
 public class MyViewPage extends PageBase {
+	
+	//MyViewPage = MainPage
 
 	// Mapping Page Content
 	By buttonAssignedToMe = By.xpath("//a[contains(.,'Assigned to Me (Unresolved)')]");
