@@ -25,7 +25,7 @@ public class LoginTests extends TestBase {
 	Utils util;
 
 	// Tests
-	//@Test
+	@Test
 	public void efetuarLoginComSucesso() {
 		// Objects instances
 		loginPage = new LoginPage();
@@ -45,7 +45,7 @@ public class LoginTests extends TestBase {
 	}
 
 	//@Test
-	public void efetuarLoginComSenhaErrada() {
+	public void efetuarLoginComSenhaIncorreta() {
 		// Objects instances
 		loginPage = new LoginPage();
 		mainPage = new MainPage();
@@ -65,7 +65,7 @@ public class LoginTests extends TestBase {
 	}
 
 	//@Test
-	public void efetuarLoginComUsuarioNulo() {
+	public void efetuarLoginComUsuarioIncorreto() {
 		// Objects instances
 		loginPage = new LoginPage();
 		mainPage = new MainPage();
@@ -101,7 +101,7 @@ public class LoginTests extends TestBase {
 	}
 
 	// @Test
-	public void efetuarLoginComSucessoSenhaRetornadaDoDB() {
+	public void efetuarLoginComSucessoUsandoBanco() {
 		// Objects instances
 		loginPage = new LoginPage();
 		mainPage = new MainPage();
@@ -135,7 +135,7 @@ public class LoginTests extends TestBase {
 	 * erro quando a celula é número inteiro - senha
 	 */
 	//@Test
-	public void efetuarLoginComSucessoDataDriven() {
+	public void efetuarLoginComSucessoUsandoDataDriven() {
 		// Objects instances
 		loginPage = new LoginPage();
 		mainPage = new MainPage();
