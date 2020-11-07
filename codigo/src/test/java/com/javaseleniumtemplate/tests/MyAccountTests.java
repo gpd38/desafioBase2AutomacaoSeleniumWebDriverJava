@@ -14,7 +14,7 @@ public class MyAccountTests extends TestBase {
 	MainPage mainPage;
 	MyAccountPage accountPage;
 
-	@Test
+	//@Test
 	public void acessarMinhaConta() {
 		// Objects instances
 		loginPage = new LoginPage();
@@ -65,7 +65,7 @@ public class MyAccountTests extends TestBase {
 		Assert.fail("Not implemented");
 	}
 
-	@Test
+	//@Test
 	public void efetuarLogout() throws Exception {
 		// Objects instances
 		loginPage = new LoginPage();
