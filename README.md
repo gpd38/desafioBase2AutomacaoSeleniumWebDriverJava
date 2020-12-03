@@ -11,9 +11,9 @@ A aplicação a ser automatiada será o mantis.
 </p>
 
 <p align="center">
-	<a href="#Desafio Parte1">Desafio parte 1</a> •
-	<a href="#Desafio Parte2">Desafio parte 2</a> •
-	<a href="#Desafio Parte3">Desafio parte 3</a>
+	<a href="#Desafio parte 1">Desafio parte 1</a> •
+	<a href="#Desafio parte 2">Desafio parte 2</a> •
+	<a href="#Desafio parte 3">Desafio parte 3</a>
 </p>
 <p align="center">
 	<a href="#Andamento do desafio">Andamento do desafio</a> •
@@ -56,7 +56,7 @@ A aplicação a ser automatiada será o mantis.
 | Item Desafio   | Status do projeto |
 | -------------- | ----------------- |
 | Nº 1           | Em andamento      |
-| Nº 2           | Em Andamento 	 |
+| Nº 2           | Concluído    	 |
 | Nº 3           | Em andamento      |
 | Nº 4           | Em andamento      |
 | Nº 5           | Em andamento      |
@@ -73,8 +73,8 @@ Serão automatizadas xx funcionalidades divididas nas seguintes telas.
     - efetuarLoginComSucesso
 	- efetuarLoginComSenhaIncorreta
 	- efetuarLoginComUsuarioIncorreto
-	- perdeuSuaSenha
-	- efetuarLoginComSucessoUsandoBanco
+	- perdeuSuaSenha (Em andamento)
+	- efetuarLoginComSucessoUsandoBanco (Em andamento)
 	- efetuarLoginComSucessoUsandoDataDriven
 
 - Tela Criar Tarefa - 8
