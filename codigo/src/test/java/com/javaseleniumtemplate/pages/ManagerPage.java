@@ -7,12 +7,14 @@ import com.javaseleniumtemplate.bases.PageBase;
 public class ManagerPage extends PageBase {
 
 	// Mapping Manager Tab
-	By managerSiteInformationTab = By.xpath("//i[@class='blue ace-icon fa fa-info-circle']");
+	By pageManagerInfo = By.xpath("//h4[contains(.,'Site Information')]");
 	By managerUsersTab = By.xpath("//a[contains(.,'Manage Users')]");
 	By managerProjectsTab = By.xpath("//a[contains(.,'Manage Projects')]");
 	By managerTagsTab = By.xpath("//a[contains(.,'Manage Tags')]");
 	By managerCustomFieldsTab = By.xpath("//a[contains(.,'Manage Custom Fields')]");
 	By managerGlobalProfilesTab = By.xpath("//a[contains(.,'Manage Global Profiles')]");
+	// By managerPluginsTab = By.xpath("");
+	// By managerConfigurationTab = By.xptah("");
 
 	// Mapping Manager User
 	By checkShowDisable = By.xpath("//span[contains(.,'Show Disabled')]");
@@ -53,7 +55,10 @@ public class ManagerPage extends PageBase {
 	By customField = By.xpath("//input[@name='name']");
 	By buttonNewCustomField = By.xpath("//input[@value='New Custom Field']");
 	By buttonDeletCustomField = By.xpath("//input[@value='Delete Custom Field']");
-	
+
 	// Actions
+	public String returnPageManagerInformation() {
+		return getText(pageManagerInfo);
+	}
 
 }

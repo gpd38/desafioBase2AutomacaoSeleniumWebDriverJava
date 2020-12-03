@@ -1,18 +1,41 @@
 package com.javaseleniumtemplate.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import com.javaseleniumtemplate.bases.TestBase;
-import com.javaseleniumtemplate.pages.LoginPage;
+import com.javaseleniumtemplate.flows.LoginFlows;
 import com.javaseleniumtemplate.pages.MainPage;
+import com.javaseleniumtemplate.pages.ManagerPage;
 
 public class ManagerTests extends TestBase {
 
 	// Objects
-	LoginPage loginPage;
+	LoginFlows loginFlows;
 	MainPage mainPage;
+	ManagerPage managerPage;
 
-	// General Tests
+	// Tests
+	@Test
+	public void acessarManagerComSucesso() {
+		// Objects instances
+		loginFlows = new LoginFlows();
+		mainPage = new MainPage();
+		managerPage = new ManagerPage();
+
+		// Parameteres
+		String usuario = "administrator";
+		String senha = "mantisbt";
+		String mensagemEncontrouPagina = "Site Information";
+
+		// Test
+		loginFlows.efetuarLogin(usuario, senha);
+		mainPage.clickManager();
+
+		Assert.assertEquals(mensagemEncontrouPagina, managerPage.returnPageManagerInformation());
+
+	}
+	
 	// @Test
 	public void validarAcessoAbaUsuario() {
 		Assert.fail("Not implemented");
