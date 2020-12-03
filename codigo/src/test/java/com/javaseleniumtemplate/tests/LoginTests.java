@@ -27,7 +27,6 @@ public class LoginTests extends TestBase {
 	// Tests
 	@Test
 	public void efetuarLoginComSucesso() {
-		// Objects instances
 		loginPage = new LoginPage();
 		mainPage = new MainPage();
 
@@ -44,9 +43,8 @@ public class LoginTests extends TestBase {
 		Assert.assertEquals(usuario, mainPage.returnUserNameLoginInformation());
 	}
 
-	//@Test
+	@Test
 	public void efetuarLoginComSenhaIncorreta() {
-		// Objects instances
 		loginPage = new LoginPage();
 		mainPage = new MainPage();
 
@@ -64,79 +62,35 @@ public class LoginTests extends TestBase {
 		Assert.assertEquals(mensagemErroEsperada, loginPage.retornaMensagemDeErro());
 	}
 
-	//@Test
+	@Test
 	public void efetuarLoginComUsuarioIncorreto() {
-		// Objects instances
 		loginPage = new LoginPage();
 		mainPage = new MainPage();
 
 		// Parameteres
 		String mensagemErroEsperada = "Your account may be disabled or blocked or the username/password you entered is incorrect.";
 
-		// Test
+		// Test: Usuário nulo
 		loginPage.clicarEmLogin();
 
 		Assert.assertEquals(mensagemErroEsperada, loginPage.retornaMensagemDeErro());
 	}
 
-	//@Test
-	public void perdeuSuaSenha() {
-		// Objects instances
-		loginPage = new LoginPage();
-		mainPage = new MainPage();
-
-		// Parameteres
-		String usuario = "administrator";
-		String url = "http://192.168.99.100:8989/lost_pwd_page.php";
-
-		// Test
-		loginPage.preenhcerUsuario(usuario);
-		loginPage.clicarEmLogin();
-		// loginPage.clicarEmPerdeuSenha();
-		// loginPage.preencherEmail(email);
-		// loginPage.clicarEmEnviar();
-
-		Assert.assertEquals(url, loginPage.getURL());
-
-	}
-
-	// @Test
+	@Test
 	public void efetuarLoginComSucessoUsandoBanco() {
-		// Objects instances
-		loginPage = new LoginPage();
-		mainPage = new MainPage();
-
-		// Parameteres
-		String usuario = "administrator";
-		// String senhaTemp = "mantisbt";
-		String senha = UsuariosDBSteps.retornaSenhaDoUsuarioDB(usuario);
-
-		// MessageDigest m;
-		// try {
-		// m = MessageDigest.getInstance("MD5");
-		// m.update(senhaTemp.getBytes(),0,senhaTemp.length());
-		// String senhaMD5 = new BigInteger(1,m.digest()).toString(16);
-		// } catch (NoSuchAlgorithmException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
-
-		// Test
-		loginPage.preenhcerUsuario(usuario);
-		loginPage.clicarEmLogin();
-		loginPage.preencherSenha(senha);
-		loginPage.clicarEmLogin();
-
-		Assert.assertEquals(usuario, mainPage.returnUserNameLoginInformation());
+		Assert.fail("Not implemented");
+		//refazer01();
 	}
+
+	
 
 	/**
-	 * Precisa corrigir erro de celula vazia para usuario e senha Precisa corrigir o
-	 * erro quando a celula é número inteiro - senha
+	 * Precisa melhorar validação para:
+	 * 		celula vazia
+	 *		celula de resposta correta
 	 */
-	//@Test
+	@Test
 	public void efetuarLoginComSucessoUsandoDataDriven() {
-		// Objects instances
 		loginPage = new LoginPage();
 		mainPage = new MainPage();
 		util = new Utils();
@@ -168,7 +122,7 @@ public class LoginTests extends TestBase {
 					usuario = (row.getCell(0)).getStringCellValue();
 					senha = (row.getCell(1)).getStringCellValue();
 					resposta = row.getCell(2).getStringCellValue();
-
+					//System.out.println(">>>>> "+usuario+" - "+senha+" - "+resposta);
 					// Test
 					loginPage.preenhcerUsuario(usuario);
 					loginPage.clicarEmLogin();
@@ -189,6 +143,35 @@ public class LoginTests extends TestBase {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void refazer01() {
+		// Objects instances
+ 		// loginPage = new LoginPage();
+		// mainPage = new MainPage();
+
+		// Parameteres
+		// String usuario = "administrator";
+		// String senhaTemp = "mantisbt";
+		// String senha = UsuariosDBSteps.retornaSenhaDoUsuarioDB(usuario);
+
+		// MessageDigest m;
+		// try {
+		// m = MessageDigest.getInstance("MD5");
+		// m.update(senhaTemp.getBytes(),0,senhaTemp.length());
+		// String senhaMD5 = new BigInteger(1,m.digest()).toString(16);
+		// } catch (NoSuchAlgorithmException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
+
+		// Test
+		// loginPage.preenhcerUsuario(usuario);
+		// loginPage.clicarEmLogin();
+		// loginPage.preencherSenha(senha);
+		// loginPage.clicarEmLogin();
+
+		// Assert.assertEquals(usuario, mainPage.returnUserNameLoginInformation());
 	}
 
 }

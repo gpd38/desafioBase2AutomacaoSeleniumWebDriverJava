@@ -12,10 +12,10 @@ import java.util.Date;
 import java.util.Iterator;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
+//import org.apache.poi.hssf.usermodel.HSSFSheet;
+//import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+//import org.apache.poi.ss.usermodel.Cell;
+//import org.apache.poi.ss.usermodel.Row;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
@@ -81,40 +81,40 @@ public class Utils {
 		return sb.toString();
 	}
 
-	public static Iterator<Row> DataDriven(String _filePath) {
-		FileInputStream file = null;
-		HSSFWorkbook workBook = null;
-		HSSFSheet sheet = null;
-		Iterator<Row> rows = null;
-		Iterator<Cell> cells = null;
-		Row row = null;
-		Cell cell = null;
-
-		try {
-			file = new FileInputStream(_filePath);
-			try {
-				workBook = new HSSFWorkbook(file);
-				// Escolhendo a aba ZERO da planilha
-				sheet = workBook.getSheetAt(0);
-				// Armazena todas as linhas da planilha
-				rows = sheet.iterator();
-				while (rows.hasNext()) {
-					// Armazena uma linha para ser trabalhada
-					row = rows.next();
-					// Percorre as celulas
-					cells = row.iterator();
-					while (cells.hasNext()) {
-						cell = cells.next();
-						System.out.println(cell.getStringCellValue());
-					}
-				}
-				workBook.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		return rows;
-	}
+//	public static Iterator<Row> DataDriven(String _filePath) {
+//		FileInputStream file = null;
+//		HSSFWorkbook workBook = null;
+//		HSSFSheet sheet = null;
+//		Iterator<Row> rows = null;
+//		Iterator<Cell> cells = null;
+//		Row row = null;
+//		Cell cell = null;
+//
+//		try {
+//			file = new FileInputStream(_filePath);
+//			try {
+//				workBook = new HSSFWorkbook(file);
+//				// Escolhendo a aba ZERO da planilha
+//				sheet = workBook.getSheetAt(0);
+//				// Armazena todas as linhas da planilha
+//				rows = sheet.iterator();
+//				while (rows.hasNext()) {
+//					// Armazena uma linha para ser trabalhada
+//					row = rows.next();
+//					// Percorre as celulas
+//					cells = row.iterator();
+//					while (cells.hasNext()) {
+//						cell = cells.next();
+//						System.out.println(cell.getStringCellValue());
+//					}
+//				}
+//				workBook.close();
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//		} catch (FileNotFoundException e) {
+//			e.printStackTrace();
+//		}
+//		return rows;
+//	}
 }

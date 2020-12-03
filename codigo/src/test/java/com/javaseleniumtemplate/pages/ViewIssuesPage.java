@@ -7,6 +7,7 @@ import com.javaseleniumtemplate.bases.PageBase;
 public class ViewIssuesPage extends PageBase {
 
 	// Mapping View Issue Page
+	By pageViewIssueInfo = By.xpath("//h4[contains(.,'Viewing Issues')]");
 	By buttonResetFilter = By.xpath("//a[contains(.,'Reset')]");
 	By buttonSaveFilter = By.xpath("//a[contains(.,'Save')]");
 	By searchFilterField = By.xpath("//input[@class='input-sm']");
@@ -20,7 +21,14 @@ public class ViewIssuesPage extends PageBase {
 	By checkSelectAllIssue = By.xpath("//span[@class='lbl padding-6']");
 	By selectActionIssue = By.xpath("//select[@name='action']");
 	By buttonOkActionIssue = By.xpath("//input[@value='OK']");
-	
+
 	// Actions
+	public String returnPageViewIssueInformation() {
+		return getText(pageViewIssueInfo);
+	}
+	
+	public String returnPageViewIssuesURL() {
+		return getURL();
+	}
 
 }

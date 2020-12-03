@@ -4,23 +4,42 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.javaseleniumtemplate.bases.TestBase;
-import com.javaseleniumtemplate.pages.BugReportPage;
-import com.javaseleniumtemplate.pages.LoginPage;
+import com.javaseleniumtemplate.flows.LoginFlows;
 import com.javaseleniumtemplate.pages.MainPage;
+import com.javaseleniumtemplate.pages.ReportIssuePage;
 
 public class ReportIssueTests extends TestBase {
 	// Objects
-	LoginPage loginPage;
+	LoginFlows loginFlows;
 	MainPage mainPage;
-	BugReportPage bugReportPage;
+	ReportIssuePage reportIssuePage;
 
 	// Tests
-	//@Test
+	@Test
+	public void acessarReportIssuesComSucesso() {
+		// Objects instances
+		loginFlows = new LoginFlows();
+		mainPage = new MainPage();
+		reportIssuePage = new ReportIssuePage();
+
+		// Parameteres
+		String usuario = "administrator";
+		String senha = "mantisbt";
+		String mensagemEncontrouPagina = "Enter Issue Details";
+
+		// Test
+		loginFlows.efetuarLogin(usuario, senha);
+		mainPage.clickReportIssueLateral();
+		
+		Assert.assertEquals(mensagemEncontrouPagina, reportIssuePage.returnPageReportIssueInformation());
+	}
+	
+	@Test
 	public void createIssueWithRequiredFields() {
 		// Objects instances
-		loginPage = new LoginPage();
+		loginFlows = new LoginFlows();
 		mainPage = new MainPage();
-		bugReportPage = new BugReportPage();
+		reportIssuePage = new ReportIssuePage();
 
 		// Parameteres
 		String usuario = "administrator";
@@ -31,18 +50,15 @@ public class ReportIssueTests extends TestBase {
 		String msgSucesso = "Operation successful.";
 
 		// Test
-		loginPage.preenhcerUsuario(usuario);
-		loginPage.clicarEmLogin();
-		loginPage.preencherSenha(senha);
-		loginPage.clicarEmLogin();
-		mainPage.clickReportIssue();
-		bugReportPage.selecionarProjetoInicial();
-		bugReportPage.selecionarCategoria(categoria);
-		bugReportPage.preencherResumo(resumo);
-		bugReportPage.preencherDescricao(descricao);
-		bugReportPage.ClicarEmSubmitReport();
+		loginFlows.efetuarLogin(usuario, senha);
+		mainPage.clickReportIssueLateral();
+		reportIssuePage.selecionarProjetoInicial();
+		reportIssuePage.selecionarCategoria(categoria);
+		reportIssuePage.preencherResumo(resumo);
+		reportIssuePage.preencherDescricao(descricao);
+		reportIssuePage.ClicarEmSubmitReport();
 
-		Assert.assertEquals(msgSucesso, bugReportPage.returnMessageSuccess());
+		Assert.assertEquals(msgSucesso, reportIssuePage.returnMessageSuccess());
 	}
 
 	//@Test

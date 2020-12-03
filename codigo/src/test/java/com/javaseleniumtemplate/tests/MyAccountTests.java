@@ -12,27 +12,29 @@ public class MyAccountTests extends TestBase {
 
 	LoginPage loginPage;
 	MainPage mainPage;
-	MyAccountPage accountPage;
+	MyAccountPage myAccountPage;
 
-	//@Test
-	public void acessarMinhaConta() {
+	@Test
+	public void acessarMyAccountComSucesso() {
 		// Objects instances
 		loginPage = new LoginPage();
 		mainPage = new MainPage();
-		accountPage = new MyAccountPage();
+		myAccountPage = new MyAccountPage();
 
 		// Parameteres
 		String usuario = "administrator";
 		String senha = "mantisbt";
+		String mensagemEncontrouPagina = "Edit Account";
 
 		// Test
 		loginPage.preenhcerUsuario(usuario);
 		loginPage.clicarEmLogin();
 		loginPage.preencherSenha(senha);
 		loginPage.clicarEmLogin();
+		mainPage.clickUserNameLoginInformation();
 		mainPage.clickMyAccount();
 
-		Assert.assertEquals("administrator", accountPage.getNomeUsuario());
+		Assert.assertEquals(mensagemEncontrouPagina, myAccountPage.returnPageMyAccountInformation());
 	}
 
 	// @Test
