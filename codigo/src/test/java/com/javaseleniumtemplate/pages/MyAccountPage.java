@@ -7,6 +7,7 @@ import com.javaseleniumtemplate.bases.PageBase;
 public class MyAccountPage extends PageBase {
 
 	// Mapping My Account Tab
+	By pageAccountInfo = By.xpath("//h4[contains(.,'Edit Account')]");
 	By userName = By.xpath("//td[contains(.,'administrator')]");
 	By currentPassword = By.xpath("//input[@name='password_current']");
 	By newPassword = By.xpath("//input[@name='password']");
@@ -31,6 +32,10 @@ public class MyAccountPage extends PageBase {
 	By buttonCreateAPIToken = By.xpath("//input[@value='Create API Token']");
 
 	// Actions
+	public String returnPageMyAccountInformation() {
+		return getText(pageAccountInfo);
+	}
+
 	public String getNomeUsuario() {
 		return getText(userName);
 	}
