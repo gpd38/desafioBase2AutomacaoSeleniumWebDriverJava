@@ -4,42 +4,36 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.javaseleniumtemplate.bases.TestBase;
-import com.javaseleniumtemplate.pages.LoginPage;
+import com.javaseleniumtemplate.flows.LoginFlows;
 import com.javaseleniumtemplate.pages.MainPage;
 
 public class MainTests extends TestBase {
 	// Objects
-	LoginPage loginPage;
+	LoginFlows loginFlows;
 	MainPage mainPage;
-	
+
 	// Tests
-	//@Test
-	public void existeTarefaRelatadaPorMim() {
-		Assert.fail("Not implemented");
-	}
-
-	// @Test
-	public void existeBotaoVerTarefas() {
-		Assert.fail("Not implemented");
-	}
-
 	@Test
-	public void perdeuSuaSenha() {
-		// Objects instances
-		loginPage = new LoginPage();
+	public void validarTelaComUsuarioVisualizador() {
+		loginFlows = new LoginFlows();
 		mainPage = new MainPage();
 
 		// Parameteres
-		String usuario = "administrator";
-		String mensagemEncontrouPagina = "Password Reset";
+		String usuario = "visualizador";
+		String senha = "mantisbt";
 
 		// Test
-		loginPage.preenhcerUsuario(usuario);
-		loginPage.clicarEmLogin();
-		loginPage.clicarEmPerdeuSenha();
+		loginFlows.efetuarLogin(usuario, senha);
 
-		Assert.assertEquals(mensagemEncontrouPagina, loginPage.returnPagePerdeuSenhaInformation());
-
+		// TODO Posso validar usando o metodo privado ?
+		// TODO Qual a melhor forma de validar ?
+		Assert.assertTrue(mainPage.returnThereIsAccessMyView());
+		Assert.assertTrue(mainPage.returnThereIsAccessViewIssues());
+		Assert.assertTrue(mainPage.returnThereIsAccessChangeLog());
+		Assert.assertTrue(mainPage.returnThereIsAccessRoadMap());
+		Assert.assertFalse(mainPage.returnThereIsAccessReportIssue());
+		Assert.assertFalse(mainPage.returnThereIsAccessSummary());
+		Assert.assertFalse(mainPage.returnThereIsAccessManager());
 	}
 
 }

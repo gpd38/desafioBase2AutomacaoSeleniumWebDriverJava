@@ -6,8 +6,6 @@ import com.javaseleniumtemplate.bases.PageBase;
 
 public class MainPage extends PageBase {
 
-	// MainPage = MyViewPage
-
 	// Mapping Side Menu
 	By myViewLink = By.xpath("//span[contains(.,'My View')]");
 	By viewIssuesLink = By.xpath("//span[contains(.,'View Issues')]");
@@ -22,55 +20,51 @@ public class MainPage extends PageBase {
 	By inviteUserLink = By.xpath("//a[contains(.,'Invite Users')]");
 	// By allProjectLink = By.xpath("");
 	By usernameLoginInfoTextArea = By.xpath("//span[@class='user-info']");
-	By myAccountLink = By.xpath("//a[@href='/account_page.php']/i"); //By.xpath("//a[contains(.,'My Account')]");//
+	By myAccountLink = By.xpath("//a[@href='/account_page.php']/i"); // By.xpath("//a[contains(.,'My Account')]");//
 	By logoutLink = By.xpath("//a[contains(.,'Logout')]");
 	By issueSearchField = By.xpath("//input[@name='bug_id']");
 
 	// Actions
-	public void clickMyView() {
-		click(myViewLink);
-	}
-
-	public void clickViewIssues() {
-		click(viewIssuesLink);
-	}
-
-	public void clickReportIssueLateral() {
-		click(reportIssueLinkLateral);
-	}
-
 	public void clickChangeLog() {
 		click(changeLogLink);
 	}
 
-	public void clickRoadmap() {
-		click(roadmapLink);
+	public String returnUserNameLoginInformation() {
+		return getText(usernameLoginInfoTextArea);
 	}
 
-	public void clickSummary() {
-		click(summaryLink);
+	public Boolean returnThereIsAccessMyView() {
+		return returnIfElementExists(myViewLink);
+	}
+
+	public Boolean returnThereIsAccessViewIssues() {
+		return returnIfElementExists(viewIssuesLink);
+	}
+
+	public Boolean returnThereIsAccessChangeLog() {
+		return returnIfElementExists(changeLogLink);
+	}
+
+	public Boolean returnThereIsAccessRoadMap() {
+		return returnIfElementExists(roadmapLink);
+	}
+
+	public Boolean returnThereIsAccessReportIssue() {
+		return returnIfElementExists(reportIssueLinkLateral);
+	}
+
+	public Boolean returnThereIsAccessSummary() {
+		return returnIfElementExists(summaryLink);
+	}
+
+	public Boolean returnThereIsAccessManager() {
+		return returnIfElementExists(managerLink);
 	}
 
 	public void clickManager() {
 		click(managerLink);
 	}
 
-	// public void clickReportIssueSuperior() {
-	// click(reportIssueLinkSuperior);
-	// }
-
-	public void clickInviteUser() {
-		click(inviteUserLink);
-	}
-
-	// public void clickAllProject() {
-	// click(allProjectLink);
-	// }
-
-	public String returnUserNameLoginInformation() {
-		return getText(usernameLoginInfoTextArea);
-	}
-	
 	public void clickUserNameLoginInformation() {
 		click(usernameLoginInfoTextArea);
 	}
@@ -83,8 +77,20 @@ public class MainPage extends PageBase {
 		click(logoutLink);
 	}
 
-	public void clickIssueSearchField(String pesquisa) {
-		sendKeys(issueSearchField, pesquisa);
+	public void clickMyView() {
+		click(myViewLink);
+	}
+
+	public void clickReportIssueLateral() {
+		click(reportIssueLinkLateral);
+	}
+
+	public void clickRoadmap() {
+		click(roadmapLink);
+	}
+
+	public void clickViewIssues() {
+		click(viewIssuesLink);
 	}
 
 }
