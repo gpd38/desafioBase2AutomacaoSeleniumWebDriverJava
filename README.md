@@ -69,15 +69,28 @@ A aplicação a ser automatiada será o mantis.
 
 Serão automatizadas xx funcionalidades divididas nas seguintes telas.
 
-- LoginTest - 6
+- LoginTests - 6
     - efetuarLoginComSucesso
 	- efetuarLoginComSenhaIncorreta
 	- efetuarLoginComUsuarioIncorreto
-	- perdeuSuaSenha (Em andamento)
-	- efetuarLoginComSucessoUsandoBanco (Em andamento)
 	- efetuarLoginComSucessoUsandoDataDriven
-
-- Tela Criar Tarefa - 8
+	- perdeuSuaSenha
+	- efetuarLoginComSucessoUsandoBanco (Em andamento)
+- MainTests - 1
+	- validarTelaComUsuarioVisualizador
+- MyAccountTests - 11
+	- acessarMyAccountComSucesso
+	- efetuarLogout
+	- changePassword (Em andamento)
+	- changeEmail (Em andamento)
+	- validarAcessoPerfilVisualizadorFuncionalidadeMyView (Em andamento)
+	- validarAcessoPerfilVisualizadorFuncionalidadeViewIssues (Em andamento)
+	- validarAcessoPerfilVisualizadorFuncionalidadeChangeLog (Em andamento)
+	- validarAcessoPerfilVisualizadorFuncionalidadeRoadmap (Em andamento)
+	- validarAcessoPerfilVisualizadorFuncionalidadeReportIssue (Em andamento)
+	- validarAcessoPerfilVisualizadorFuncionalidadeSummary (Em andamento)
+	- validarAcessoPerfilVisualizadorFuncionalidadeManage (Em andamento)
+- ReportIssue - 8
 	- createIssueWithAllCompleteFields
 	- createIssueWithRequiredFields
 	- validateFieldRequiredDescription
@@ -86,18 +99,11 @@ Serão automatizadas xx funcionalidades divididas nas seguintes telas.
 	- createIssueDuplicated
 	- validateAssignUserIssue
 	- validateSizeAttachedFile
-- Tela Minha Conta - 8
-	- acessarMinhaConta
-	- atualizarSenha
-	- atualizarEmail
-	- acessarPaginaMinhaVisao
-	- acessarPaginaVerTarefas
-	- acessarPaginaCriarTarefas
-	- acessarPaginaGerenciar
-	- efetuarLogout
-- Tela Minha Visão - 2
-	- existeTarefaRelatadaPorMim
-	- existeBotaoVerTarefas
+- MyView - 
+	- acessarMyViewComSucesso
+	- validarURLPage
+	- 
+	
 - Tela Ver Tarefas - 18
 	- apagarMarcador
 	- resolverTarefa
