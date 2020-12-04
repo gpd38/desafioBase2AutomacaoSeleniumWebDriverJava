@@ -13,16 +13,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.javaseleniumtemplate.bases.TestBase;
-import com.javaseleniumtemplate.dbsteps.UsuariosDBSteps;
 import com.javaseleniumtemplate.pages.LoginPage;
 import com.javaseleniumtemplate.pages.MainPage;
-import com.javaseleniumtemplate.utils.Utils;
 
 public class LoginTests extends TestBase {
 	// Objects
 	LoginPage loginPage;
 	MainPage mainPage;
-	Utils util;
+	//Utils util;
 
 	// Tests
 	@Test
@@ -75,25 +73,33 @@ public class LoginTests extends TestBase {
 
 		Assert.assertEquals(mensagemErroEsperada, loginPage.retornaMensagemDeErro());
 	}
-
+	
 	@Test
-	public void efetuarLoginComSucessoUsandoBanco() {
-		Assert.fail("Not implemented");
-		//refazer01();
+	public void perdeuSuaSenha() {
+		// Objects instances
+		loginPage = new LoginPage();
+		mainPage = new MainPage();
+
+		// Parameteres
+		String usuario = "administrator";
+		String mensagemEncontrouPagina = "Password Reset";
+
+		// Test
+		loginPage.preenhcerUsuario(usuario);
+		loginPage.clicarEmLogin();
+		loginPage.clicarEmPerdeuSenha();
+
+		Assert.assertEquals(mensagemEncontrouPagina, loginPage.returnPagePerdeuSenhaInformation());
+
 	}
 
-	
-
 	/**
-	 * Precisa melhorar validação para:
-	 * 		celula vazia
-	 *		celula de resposta correta
+	 * Precisa melhorar validação para celula vazia e celula de resposta correta
 	 */
 	@Test
 	public void efetuarLoginComSucessoUsandoDataDriven() {
 		loginPage = new LoginPage();
 		mainPage = new MainPage();
-		util = new Utils();
 
 		// Parameteres
 		String usuario = null;
@@ -122,7 +128,6 @@ public class LoginTests extends TestBase {
 					usuario = (row.getCell(0)).getStringCellValue();
 					senha = (row.getCell(1)).getStringCellValue();
 					resposta = row.getCell(2).getStringCellValue();
-					//System.out.println(">>>>> "+usuario+" - "+senha+" - "+resposta);
 					// Test
 					loginPage.preenhcerUsuario(usuario);
 					loginPage.clicarEmLogin();
@@ -144,10 +149,16 @@ public class LoginTests extends TestBase {
 			e.printStackTrace();
 		}
 	}
-	
+
+	//@Test
+	public void efetuarLoginComSucessoUsandoBanco() {
+		Assert.fail("Not implemented");
+		// refazer01();
+	}
+
 	private void refazer01() {
 		// Objects instances
- 		// loginPage = new LoginPage();
+		// loginPage = new LoginPage();
 		// mainPage = new MainPage();
 
 		// Parameteres
