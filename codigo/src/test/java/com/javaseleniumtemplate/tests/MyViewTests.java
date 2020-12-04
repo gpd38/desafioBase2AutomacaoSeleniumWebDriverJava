@@ -15,24 +15,24 @@ public class MyViewTests extends TestBase {
 	MyViewPage myViewPage;
 
 	// Tests
-	// @Test
+	@Test
 	public void acessarMyViewComSucesso() {
-	// // Objects instances
-	// loginFlows = new LoginFlows();
-	// mainPage = new MainPage();
-	// myViewPage = new MyViewPage();
-	//
-	// // Parameteres
-	// String usuario = "administrator";
-	// String senha = "mantisbt";
-	// String mensagemEncontrouPagina = "Timeline";
-	//
-	// // Test
-	// loginFlows.efetuarLogin(usuario, senha);
-	// mainPage.clickViewIssues();
-	//
-	// Assert.assertEquals(mensagemEncontrouPagina, myViewPage.returnPageMyViewIssuesInformation());
-	//
+		// Objects instances
+		loginFlows = new LoginFlows();
+		mainPage = new MainPage();
+		myViewPage = new MyViewPage();
+
+		// Parameteres
+		String usuario = "administrator";
+		String senha = "mantisbt";
+		String mensagemEncontrouPagina = "Timeline";
+
+		// Test
+		loginFlows.efetuarLogin(usuario, senha);
+		mainPage.clickMyView();
+
+		Assert.assertEquals(mensagemEncontrouPagina, myViewPage.returnPageMyViewInformation());
+
 	}
 
 	@Test
@@ -54,4 +54,10 @@ public class MyViewTests extends TestBase {
 		Assert.assertEquals(urlPage, myViewPage.returnPageMyViewURL());
 
 	}
+
+	// @Test
+	public void validarAcessoAssignedToMe() {
+		Assert.fail("Not implemented");
+	}
+
 }
