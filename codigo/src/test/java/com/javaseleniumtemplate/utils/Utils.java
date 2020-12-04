@@ -2,14 +2,11 @@ package com.javaseleniumtemplate.utils;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Iterator;
 
 import org.apache.commons.io.FileUtils;
 //import org.apache.poi.hssf.usermodel.HSSFSheet;
