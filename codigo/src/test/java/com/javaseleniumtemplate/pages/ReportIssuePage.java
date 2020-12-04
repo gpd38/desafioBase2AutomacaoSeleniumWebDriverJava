@@ -6,8 +6,8 @@ import com.javaseleniumtemplate.bases.PageBase;
 
 public class ReportIssuePage extends PageBase {
 
-	// Mapping Report Issue
-	//By pageReportIssueInfo = By.xpath("//h4[contains(.,'Enter Issue Details')]");
+	// Mapping Report Issue            
+	By pageReportIssueInfo = By.xpath("//h4[contains(.,'Choose Project')]");
 	By categoryComboBox = By.name("category_id");
 	By reproducibilityComboBox = By.id("reproducibility");
 	By severityComboBox = By.id("severity");
@@ -32,8 +32,13 @@ public class ReportIssuePage extends PageBase {
 
 	// Actions
 	public String returnPageReportIssueInformation() {
+		return getText(pageReportIssueInfo);
+	}
+	
+	public String returnMessageSuccess() {
 		return getText(messageRetornoSuccess);
 	}
+
 
 	public void selecionarProjetoInicial() {
 		click(selectProjectAccessBugReport);
@@ -59,8 +64,5 @@ public class ReportIssuePage extends PageBase {
 		click(submitButton);
 	}
 
-	public String returnMessageSuccess() {
-		return getText(messageRetornoSuccess);
-	}
-
+	
 }

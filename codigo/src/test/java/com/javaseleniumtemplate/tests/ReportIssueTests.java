@@ -25,7 +25,7 @@ public class ReportIssueTests extends TestBase {
 		// Parameteres
 		String usuario = "administrator";
 		String senha = "mantisbt";
-		String mensagemEncontrouPagina = "Enter Issue Details";
+		String mensagemEncontrouPagina = "Choose Project";
 
 		// Test
 		loginFlows.efetuarLogin(usuario, senha);
