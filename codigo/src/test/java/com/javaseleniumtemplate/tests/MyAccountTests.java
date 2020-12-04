@@ -9,11 +9,12 @@ import com.javaseleniumtemplate.pages.MainPage;
 import com.javaseleniumtemplate.pages.MyAccountPage;
 
 public class MyAccountTests extends TestBase {
-
+	// Objects
 	LoginPage loginPage;
 	MainPage mainPage;
 	MyAccountPage myAccountPage;
 
+	// Tests
 	@Test
 	public void acessarMyAccountComSucesso() {
 		// Objects instances
@@ -37,37 +38,7 @@ public class MyAccountTests extends TestBase {
 		Assert.assertEquals(mensagemEncontrouPagina, myAccountPage.returnPageMyAccountInformation());
 	}
 
-	// @Test
-	public void atualizarSenha() {
-		Assert.fail("Not implemented");
-	}
-
-	// @Test
-	public void atualizarEmail() {
-		Assert.fail("Not implemented");
-	}
-
-	// @Test
-	public void acessarPaginaMinhaVisao() {
-		Assert.fail("Not implemented");
-	}
-
-	// @Test
-	public void acessarPaginaVerTarefas() {
-		Assert.fail("Not implemented");
-	}
-
-	// @Test
-	public void acessarPaginaCriarTarefas() {
-		Assert.fail("Not implemented");
-	}
-
-	// @Test
-	public void acessarPaginaGerenciar() {
-		Assert.fail("Not implemented");
-	}
-
-	//@Test
+	@Test
 	public void efetuarLogout() throws Exception {
 		// Objects instances
 		loginPage = new LoginPage();
@@ -82,9 +53,55 @@ public class MyAccountTests extends TestBase {
 		loginPage.clicarEmLogin();
 		loginPage.preencherSenha(senha);
 		loginPage.clicarEmLogin();
+		mainPage.clickUserNameLoginInformation();
 		mainPage.clickLogout();
 
 		Assert.assertTrue(loginPage.existeBotaoEntrar());
+	}
+
+	// @Test
+	public void changePassword() {
+		Assert.fail("Not implemented");
+	}
+
+	// @Test
+	public void changeEmail() {
+		Assert.fail("Not implemented");
+	}
+
+	// @Test
+	public void validarAcessoPerfilVisualizadorFuncionalidadeMyView() {
+		Assert.fail("Not implemented");
+	}
+
+	// @Test
+	public void validarAcessoPerfilVisualizadorFuncionalidadeViewIssues() {
+		Assert.fail("Not implemented");
+	}
+
+	// @Test
+	public void validarAcessoPerfilVisualizadorFuncionalidadeChangeLog() {
+		Assert.fail("Not implemented");
+	}
+
+	// @Test
+	public void validarAcessoPerfilVisualizadorFuncionalidadeRoadmap() {
+		Assert.fail("Not implemented");
+	}
+
+	// @Test
+	public void validarAcessoPerfilVisualizadorFuncionalidadeReportIssue() {
+		Assert.fail("Not implemented");
+	}
+
+	// @Test
+	public void validarAcessoPerfilVisualizadorFuncionalidadeSummary() {
+		Assert.fail("Not implemented");
+	}
+
+	// @Test
+	public void validarAcessoPerfilVisualizadorFuncionalidadeManage() {
+		Assert.fail("Not implemented");
 	}
 
 }
