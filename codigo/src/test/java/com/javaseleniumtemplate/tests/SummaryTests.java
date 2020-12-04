@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 
 import com.javaseleniumtemplate.bases.TestBase;
 import com.javaseleniumtemplate.flows.LoginFlows;
-import com.javaseleniumtemplate.pages.ChangeLogPage;
 import com.javaseleniumtemplate.pages.MainPage;
 import com.javaseleniumtemplate.pages.SummaryPage;
 
