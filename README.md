@@ -59,8 +59,8 @@ A aplicação a ser automatiada será o mantis.
 | Nº 2           | Concluído    	 |
 | Nº 3           | Em andamento      |
 | Nº 4           | Em andamento      |
-| Nº 5           | Em andamento      |
-| Nº 6           | Em andamento      |
+| Nº 5           | Concluído         |
+| Nº 6           | Concluído         |
 | Nº 7           | Não Iniciado      |
 | Nº 8           | Não Iniciado      |
 | Nº 9           | Não Iniciado      |
