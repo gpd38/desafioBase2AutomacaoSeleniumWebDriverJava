@@ -103,7 +103,6 @@ Serão automatizadas xx funcionalidades divididas nas seguintes telas.
 	- acessarMyViewComSucesso
 	- validarURLPage
 	- 
-	
 - Tela Ver Tarefas - 18
 	- apagarMarcador
 	- resolverTarefa
