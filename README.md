@@ -168,13 +168,13 @@ Após salvar, verifique se o projeo está habilitado e clique em "construir agor
 
 ## Cenários 
 
-- [LoginTests](hhttps://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/LoginTests.java)
+- [LoginTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/src/test/java/com/javaseleniumtemplate/tests/LoginTests.java)
     - efetuarLoginComSucesso
     - efetuarLoginComSenhaIncorreta
     - efetuarLoginComUsuarioIncorreto
     - perdeuSuaSenha
     - efetuarLoginComUsandoDataDriven
-- [ManagerCamposPersonalizados](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerCamposPersonalizados.java)
+- [ManagerCamposPersonalizadosTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerCamposPersonalizados.java)
     - cadastrarCampoPersonalizado
     - validarCampoPersonalizadoVazio
     - validarCadastroRepetidoDeCampoPersonalizado
@@ -189,7 +189,7 @@ Após salvar, verifique se o projeo está habilitado e clique em "construir agor
     - cadastrarProjetoRepetido
     - editarProjeto
     - deletarProjeto
-- [ManagerResumoTest](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerResumoTest.java)
+- [ManagerResumoTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerResumoTest.java)
     - validarAcessoAoResumoComUsuarioAdmin
     - validarAcessoNegadoResumoComDeveloper
 - [ManagerTagTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerTagTests.java)
@@ -216,7 +216,7 @@ Após salvar, verifique se o projeo está habilitado e clique em "construir agor
     - cadastroDeUserNameRepetido
     - cadastroDeUserEmailRepetido
     - redefinirSenha
-- [ManagerVerTarefasTest](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerVerTarefasTest.java)
+- [ManagerVerTarefasTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerVerTarefasTest.java)
     - validarAcessoVerTarefasComSucesso
     - validarInserirMarcador
 - [MinhaContaTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/MinhaContaTests.java)
