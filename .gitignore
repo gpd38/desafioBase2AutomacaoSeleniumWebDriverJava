@@ -1,3 +1,36 @@
-/banco
-/generator
-/oculto
+HELP.md
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+anotacoes.md
+.mvn
+.mvnw
+.cmd
+.log
+azure-pipelines.yml
+/private/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+
+### VS Code ###
+.vscode/
