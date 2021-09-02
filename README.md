@@ -168,36 +168,36 @@ Após salvar, verifique se o projeo está habilitado e clique em "construir agor
 
 ## Cenários 
 
-- [LoginTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/src/test/java/com/javaseleniumtemplate/tests/LoginTests.java)
+- [LoginTests](hhttps://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/LoginTests.java)
     - efetuarLoginComSucesso
     - efetuarLoginComSenhaIncorreta
     - efetuarLoginComUsuarioIncorreto
     - perdeuSuaSenha
     - efetuarLoginComUsandoDataDriven
-- [ManagerCamposPersonalizados](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/src/test/java/com/javaseleniumtemplate/tests/ManagerCamposPersonalizados.java)
+- [ManagerCamposPersonalizados](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerCamposPersonalizados.java)
     - cadastrarCampoPersonalizado
     - validarCampoPersonalizadoVazio
     - validarCadastroRepetidoDeCampoPersonalizado
     - editarCampoPersonalizado
     - deletarCampoPersonalizado
-- [ManagerProfileTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/src/test/java/com/javaseleniumtemplate/tests/ManagerProfileTests.java)
+- [ManagerProfileTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerProfileTests.java)
     - cadastrarProfile
     - validarClickBotaoEnviarSemInformacao
     - efetuarCadastroProfileUsandoDataDriven
-- [ManagerProjectsTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/src/test/java/com/javaseleniumtemplate/tests/ManagerProjectsTests.java)
+- [ManagerProjectsTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerProjectsTests.java)
     - cadastrarProjeto
     - cadastrarProjetoRepetido
     - editarProjeto
     - deletarProjeto
-- [ManagerResumoTest](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/src/test/java/com/javaseleniumtemplate/tests/ManagerResumoTest.java)
+- [ManagerResumoTest](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerResumoTest.java)
     - validarAcessoAoResumoComUsuarioAdmin
     - validarAcessoNegadoResumoComDeveloper
-- [ManagerTagTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/src/test/java/com/javaseleniumtemplate/tests/ManagerTagTests.java)
+- [ManagerTagTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerTagTests.java)
     - cadastrarTag
     - validarTelaEdicaoDeTag
     - editarTag
     - deletarTag
-- [ManagerTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/src/test/java/com/javaseleniumtemplate/tests/ManagerTests.java)
+- [ManagerTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerTests.java)
     - validateAccessInformationTab
     - validateAccessUsersTab
     - validateAccessProjectsTab
@@ -206,7 +206,7 @@ Após salvar, verifique se o projeo está habilitado e clique em "construir agor
     - validateAccessGlobalProfilesTab
     - validateAccessPluginsTab
     - validateAccessConfigurationTab
-- [ManagerUsersTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/src/test/java/com/javaseleniumtemplate/tests/ManagerUsersTests.java)
+- [ManagerUsersTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerUsersTests.java)
     - cadastrarRelatorUser
     - cadastrarVisualizadorUser
     - cadastrarAtualizadorUser
@@ -216,10 +216,10 @@ Após salvar, verifique se o projeo está habilitado e clique em "construir agor
     - cadastroDeUserNameRepetido
     - cadastroDeUserEmailRepetido
     - redefinirSenha
-- [ManagerVerTarefasTest](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/src/test/java/com/javaseleniumtemplate/tests/ManagerVerTarefasTest.java)
+- [ManagerVerTarefasTest](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerVerTarefasTest.java)
     - validarAcessoVerTarefasComSucesso
     - validarInserirMarcador
-- [MinhaContaTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/src/test/java/com/javaseleniumtemplate/tests/MinhaContaTests.java)
+- [MinhaContaTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/MinhaContaTests.java)
     - acessarMinhaContaComSucesso
     - efetuarLogout
     - acessarAbaPreferencia
@@ -228,7 +228,7 @@ Após salvar, verifique se o projeo está habilitado e clique em "construir agor
     - acessarAbaToken
     - validarErroCriacaoTokenAPI
     - validarCriacaoTokenAPIComSucesso
-- [ReportIssueTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/src/test/java/com/javaseleniumtemplate/tests/ReportIssueTests.java)
+- [ReportIssueTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ReportIssueTests.java)
     - cadastrarNovaIssueComSucessoInformandoSomenteCamposObrigatorios
     - cadastrarNovaIssueComSucessoInformandoTodosOsCampos
 
