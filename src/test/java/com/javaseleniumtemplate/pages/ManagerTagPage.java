@@ -18,6 +18,7 @@ public class ManagerTagPage extends PageBase {
     By botaoAtualizarTag = By.xpath("//input[@value='Atualizar Marcador']");
     By botaoConfirmarDeletarTag = By.xpath("//input[@type='submit']");
     By botaoDeletarTag = By.xpath("//input[@value='Apagar Marcador']");
+    By elementoTagPesquisado;
 
     //Actions
     public void clicarBotaoCriarTag() {
@@ -36,34 +37,33 @@ public class ManagerTagPage extends PageBase {
         sendKeys(campoDescricaoTag, descriptionTag);
     }
 
-    public void clicarElementoEspecifico(String thisElement) {
-        WebElement findElement = search(thisElement);
-        assert findElement != null;
-        findElement.click();
-    }
-
-    public String returnEdicaoSucesso() {
-        return getText(textoEdicao);
-    }
-
-    public List<WebElement> getAllElements() {
-        return (waitForElements(tabelaTag));
-    }
-
-    private WebElement search(String searchItem) {
-        String result;
-        List<WebElement> listaTags = getAllElements();
+    public boolean existeElementoEspecifico(String tag) {
+        List<WebElement> listaTags = waitForElements(tabelaTag);
+        System.out.println("QTD LISTA: "+listaTags.size());
         for (WebElement atual : listaTags) {
-            result = atual.getText();
-            if (result.contains(searchItem)) {
-                return atual;
-            }
+            elementoTagPesquisado = By.xpath("//a[contains(.,'" + atual.getText() + "')]");
+            if (getText(elementoTagPesquisado).equalsIgnoreCase(tag))
+                return true;
+        }
+        return false;
+    }
+
+    public By pesquisarElementoEspecifico(String tag) {
+        List<WebElement> listaTags = waitForElements(tabelaTag);
+        for (WebElement atual : listaTags) {
+            elementoTagPesquisado = By.xpath("//a[contains(.,'" + atual + "')]");
+            if (returnIfElementExists(elementoTagPesquisado) && getText(elementoTagPesquisado).equalsIgnoreCase(tag))
+                return (elementoTagPesquisado);
         }
         return null;
     }
 
-    public Boolean existeElemento(String tagName) {
-        return search(tagName) != null;
+    public void clicarNoElementoEncontrado(String tag) {
+        click(pesquisarElementoEspecifico(tag));
+    }
+
+    public String returnEdicaoSucesso() {
+        return getText(textoEdicao);
     }
 
     public void clicarBotaoAtualizarTag() {

@@ -40,7 +40,7 @@ public class ManagerTagTests extends TestBase {
         managerTagPage.preencherDescricaoTag(tagDescription);
         managerTagPage.clicarBotaoAddTag();
 
-        Assert.assertTrue(managerTagPage.existeElemento(tagName));
+        Assert.assertTrue(managerTagPage.existeElementoEspecifico(tagName));
 
     }
 
@@ -68,7 +68,7 @@ public class ManagerTagTests extends TestBase {
         managerTagPage.preencherNomeTag(tagName);
         managerTagPage.preencherDescricaoTag(tagDescription);
         managerTagPage.clicarBotaoAddTag();
-        managerTagPage.clicarElementoEspecifico(tagName);
+        managerTagPage.clicarNoElementoEncontrado(tagName);
 
         Assert.assertEquals(msgTelaEditarSucesso, managerTagPage.returnEdicaoSucesso());
 
@@ -97,7 +97,7 @@ public class ManagerTagTests extends TestBase {
         managerTagPage.preencherNomeTag(tagName);
         managerTagPage.preencherDescricaoTag(tagDescription);
         managerTagPage.clicarBotaoAddTag();
-        managerTagPage.clicarElementoEspecifico(tagName);
+        managerTagPage.clicarNoElementoEncontrado(tagName);
 
         managerTagPage.clicarBotaoAtualizarTag();
         managerTagPage.limparCampoTagName();
@@ -135,12 +135,12 @@ public class ManagerTagTests extends TestBase {
         managerTagPage.preencherNomeTag(tagName);
         managerTagPage.preencherDescricaoTag(tagDescription);
         managerTagPage.clicarBotaoAddTag();
-        managerTagPage.clicarElementoEspecifico(tagName);
+        managerTagPage.clicarNoElementoEncontrado(tagName);
 
         managerTagPage.clicarBotaoDeletarTag();
         managerTagPage.clicarBotaoConfirmarDeletarTag();
 
-        Assert.assertFalse(managerTagPage.existeElemento(tagName));
+        Assert.assertFalse(managerTagPage.existeElementoEspecifico(tagName));
 
     }
 

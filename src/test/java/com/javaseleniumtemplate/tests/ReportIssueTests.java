@@ -8,8 +8,6 @@ import com.javaseleniumtemplate.utils.Utils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
-
 public class ReportIssueTests extends TestBase {
     //Objects
     LoginFlows loginFlows;
@@ -66,13 +64,12 @@ public class ReportIssueTests extends TestBase {
         String gravidade = "obstáculo";
         String prioridade = "urgente";
         String perfil = "Plataforma Default B SO Default B Versão Original B";
-        String atribuirUsuario = "desenvolvedor";
         String resumo = "Resumo teste automático " + id;
         String descricao = "Descrição teste automático " + id;
-        String passosParaReproduzir = "Passo a passo da tarefa "+id;
-        String infoAdicionais = "Informações adicionais da tarefa "+id;
+        String passosParaReproduzir = "Passo a passo da tarefa " + id;
+        String infoAdicionais = "Informações adicionais da tarefa " + id;
         //String caminhoArquivo = "src/test/resources/files/anexo_ocorrencia.jpg";
-        String marcador = "Tag "+id;
+        String marcador = "Tag " + id;
         String msgCadastroSucesso = "Operação realizada com sucesso.";
 
         //Test
@@ -85,7 +82,7 @@ public class ReportIssueTests extends TestBase {
         bugReportPage.selecionarGravidade(gravidade);
         bugReportPage.selecionarPrioridade(prioridade);
         bugReportPage.selecionarPerfil(perfil);
-        bugReportPage.atribuirUsuarioTarefa(atribuirUsuario);
+        bugReportPage.atribuirUsuarioTarefa(usuario);
         bugReportPage.preencherResumo(resumo);
         bugReportPage.preencherDescricao(descricao);
         bugReportPage.preencherPassoAPasso(passosParaReproduzir);

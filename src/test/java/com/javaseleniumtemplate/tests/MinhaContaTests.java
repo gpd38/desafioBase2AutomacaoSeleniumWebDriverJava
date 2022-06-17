@@ -62,7 +62,7 @@ public class MinhaContaTests extends TestBase {
     }
 
     @Test
-    public void acessarAbaPreferencia(){
+    public void acessarAbaPreferencia() {
         // Objects instances
         loginPage = new LoginPage();
         mainPage = new MainPage();
@@ -86,7 +86,7 @@ public class MinhaContaTests extends TestBase {
     }
 
     @Test
-    public void acessarAbaGerenciarColunas(){
+    public void acessarAbaGerenciarColunas() {
         // Objects instances
         loginPage = new LoginPage();
         mainPage = new MainPage();
@@ -110,7 +110,7 @@ public class MinhaContaTests extends TestBase {
     }
 
     @Test
-    public void acessarAbaPerfis(){
+    public void acessarAbaPerfis() {
         // Objects instances
         loginPage = new LoginPage();
         mainPage = new MainPage();
@@ -134,7 +134,7 @@ public class MinhaContaTests extends TestBase {
     }
 
     @Test
-    public void acessarAbaToken(){
+    public void acessarAbaToken() {
         // Objects instances
         loginPage = new LoginPage();
         mainPage = new MainPage();
@@ -158,7 +158,7 @@ public class MinhaContaTests extends TestBase {
     }
 
     @Test
-    public void validarErroCriacaoTokenAPI(){
+    public void validarErroCriacaoTokenAPI() {
         // Objects instances
         loginPage = new LoginPage();
         mainPage = new MainPage();
@@ -183,7 +183,7 @@ public class MinhaContaTests extends TestBase {
     }
 
     @Test
-    public void validarCriacaoTokenAPIComSucesso(){
+    public void validarCriacaoTokenAPIComSucesso() {
         // Objects instances
         loginPage = new LoginPage();
         mainPage = new MainPage();
@@ -193,7 +193,7 @@ public class MinhaContaTests extends TestBase {
         String usuario = "administrator";
         String senha = "mantisbt";
         String id = Utils.gerarNumerosAleatorios();
-        String nomeToken = "Token-"+id;
+        String nomeToken = "Token-" + id;
 
         // Test
         loginPage.preencherUsuario(usuario);

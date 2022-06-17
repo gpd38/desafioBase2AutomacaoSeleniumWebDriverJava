@@ -21,6 +21,7 @@ public class GlobalParameters {
     public static String DB_USER;
     public static String DB_PASSWORD;
     public static String DB_DRIVER;
+    public static String RESOURCES;
 
     private final Properties properties;
 

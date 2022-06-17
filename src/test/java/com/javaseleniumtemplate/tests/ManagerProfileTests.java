@@ -86,7 +86,7 @@ public class ManagerProfileTests extends TestBase {
         // Parameteres
         String usuario = "administrator";
         String senha = "mantisbt";
-        String plataforma, so , versao, descricao;
+        String plataforma, so, versao, descricao;
         FileInputStream file;
         HSSFWorkbook workBook;
         HSSFSheet sheet;

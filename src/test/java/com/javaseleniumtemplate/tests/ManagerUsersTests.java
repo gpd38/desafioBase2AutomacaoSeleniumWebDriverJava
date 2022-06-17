@@ -343,7 +343,7 @@ public class ManagerUsersTests extends TestBase {
 
     @Ignore
     @Test
-    public void validarSenhaAtualizadaComSucessoPeloDB(){
+    public void validarSenhaAtualizadaComSucessoPeloDB() {
         //Objects instances
         loginFlows = new LoginFlows();
         managerPage = new ManagerPage();

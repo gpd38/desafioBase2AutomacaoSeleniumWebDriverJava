@@ -3,21 +3,49 @@ package com.javaseleniumtemplate.tests;
 import com.javaseleniumtemplate.bases.TestBase;
 import com.javaseleniumtemplate.pages.LoginPage;
 import com.javaseleniumtemplate.pages.MainPage;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Row;
+import com.javaseleniumtemplate.utils.Utils;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Iterator;
 
 public class LoginTests extends TestBase {
     //Objects
     LoginPage loginPage;
     MainPage mainPage;
+    Utils utils;
+
+    @DataProvider(name = "LoginTestData")
+    public static Object[][] getDadosParaTesteComExcel() throws IOException {
+//        String LoginTestData[][] = {
+//                {"AdminNaoExiste","mantisbt","http://localhost:8989/login_page.php"},
+//                {"administrator","SenhaNaoExiste","http://localhost:8989/login_page.php"},
+//                {"Inexistente_User","Inexistente_Senha","http://localhost:8989/login_page.php"},
+//                {"administrator","","http://localhost:8989/login_page.php"},
+//                {"administrator","MANTISBT","http://localhost:8989/login_page.php"},
+//                {"administrator","mantisbt","http://localhost:8989/login_page.php"},
+//                {".","mantisbt","http://localhost:8989/login_page.php"}
+//        };
+
+        Utils utils = new Utils();
+        String path = System.getProperty("user.dir") + "/src/test/resources/files/LoginTestData.xls";
+
+        int l = utils.getRowCount(path);
+        int c = utils.getCellCount(path, 1);
+
+        String LoginTestData[][] = new String[l][c];
+
+        for (int i = 0; i < l; i++) //1
+        {
+            for (int j = 0; j < c; j++) //0
+            {
+                LoginTestData[i][j] = utils.getCellData(path, i, j);
+            }
+        }
+
+        return LoginTestData;
+    }
 
     //Tests
     @Test
@@ -43,7 +71,6 @@ public class LoginTests extends TestBase {
     @Test
     public void efetuarLoginComSenhaIncorreta() {
         loginPage = new LoginPage();
-        mainPage = new MainPage();
 
         // Parameteres
         String usuario = "administrator";
@@ -62,7 +89,6 @@ public class LoginTests extends TestBase {
     @Test
     public void efetuarLoginComUsuarioIncorreto() {
         loginPage = new LoginPage();
-        mainPage = new MainPage();
 
         // Parameteres
         String mensagemErroEsperadaPT = "Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos.";
@@ -77,7 +103,6 @@ public class LoginTests extends TestBase {
     public void perdeuSuaSenha() {
         // Objects instances
         loginPage = new LoginPage();
-        mainPage = new MainPage();
 
         // Parameteres
         String usuario = "administrator";
@@ -92,51 +117,17 @@ public class LoginTests extends TestBase {
 
     }
 
-    @Test
-    public void efetuarLoginComUsandoDataDriven() {
-
+    @Test(dataProvider = "LoginTestData")
+    public void efetuarLoginComUsandoDataDriven(String usuario, String senha, String resposta) {
         loginPage = new LoginPage();
-        mainPage = new MainPage();
 
-        // Parameteres
-        String usuario ,senha ,resposta;
-        FileInputStream file;
-        HSSFWorkbook workBook ;
-        HSSFSheet sheet;
-        Iterator<Row> rows;
-        Row row;
-        String caminhoArquivo = "src/test/resources/files/LoginTestData.xls";
+        // Test
+        loginPage.preencherUsuario(usuario);
+        loginPage.clicarEmLogin();
+        loginPage.preencherSenha(senha);
+        loginPage.clicarEmLogin();
 
-        try {
-            file = new FileInputStream(caminhoArquivo);
-            try {
-                workBook = new HSSFWorkbook(file);
-                // Escolhendo a aba ZERO da planilha
-                sheet = workBook.getSheetAt(0);
-                // Armazena todas as linhas da planilha
-                rows = sheet.iterator();
-                while (rows.hasNext()) {
-                    // Armazena uma linha para ser trabalhada
-                    row = rows.next();
-                    usuario = row.getCell(0).getStringCellValue();
-                    senha = row.getCell(1).getStringCellValue();
-                    resposta = row.getCell(2).getStringCellValue();
-
-                    // Test
-                    loginPage.preencherUsuario(usuario);
-                    loginPage.clicarEmLogin();
-                    loginPage.preencherSenha(senha);
-                    loginPage.clicarEmLogin();
-
-                    Assert.assertEquals(resposta, loginPage.retornaUrlAtualTratada());
-                }
-                workBook.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        Assert.assertEquals(resposta, loginPage.retornaUrlAtualTratada());
     }
 
 }

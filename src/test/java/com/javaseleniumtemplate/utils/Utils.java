@@ -1,14 +1,16 @@
 package com.javaseleniumtemplate.utils;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -53,7 +55,7 @@ public class Utils {
     }
 
     public static String getFileContent(String filePath) {
-        BufferedReader br = null;
+        BufferedReader br;
         StringBuilder sb = null;
         try {
             br = new BufferedReader(new FileReader(filePath));
@@ -86,6 +88,52 @@ public class Utils {
         }
 
         return result;
+    }
+
+    FileInputStream file;
+    HSSFWorkbook workBook;
+    HSSFSheet sheet;
+    HSSFRow row;
+    HSSFCell cell;
+    String value;
+
+    public int getRowCount(String path) throws IOException {
+        file = new FileInputStream(path);
+        workBook = new HSSFWorkbook(file);
+        sheet = workBook.getSheetAt(0);
+        int rowcount = sheet.getLastRowNum();
+        workBook.close();
+        file.close();
+
+        return rowcount;
+    }
+
+    public int getCellCount(String path, int rownum) throws IOException {
+        file = new FileInputStream(path);
+        workBook = new HSSFWorkbook(file);
+        sheet = workBook.getSheetAt(0);
+        row = sheet.getRow(rownum);
+        int cellcount = row.getLastCellNum();
+        workBook.close();
+        file.close();
+
+        return cellcount;
+    }
+
+    public String getCellData(String path, int rownum, int colnum) throws IOException {
+        file = new FileInputStream(path);
+        workBook = new HSSFWorkbook(file);
+        sheet = workBook.getSheetAt(0);
+        row = sheet.getRow(rownum);
+        cell = row.getCell(colnum);
+
+        DataFormatter formatter = new DataFormatter();
+        String data = formatter.formatCellValue(cell);
+
+        workBook.close();
+        file.close();
+
+        return data;
     }
 
 }
