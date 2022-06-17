@@ -14,38 +14,7 @@ public class LoginTests extends TestBase {
     //Objects
     LoginPage loginPage;
     MainPage mainPage;
-    Utils utils;
-
-    @DataProvider(name = "LoginTestData")
-    public static Object[][] getDadosParaTesteComExcel() throws IOException {
-//        String LoginTestData[][] = {
-//                {"AdminNaoExiste","mantisbt","http://localhost:8989/login_page.php"},
-//                {"administrator","SenhaNaoExiste","http://localhost:8989/login_page.php"},
-//                {"Inexistente_User","Inexistente_Senha","http://localhost:8989/login_page.php"},
-//                {"administrator","","http://localhost:8989/login_page.php"},
-//                {"administrator","MANTISBT","http://localhost:8989/login_page.php"},
-//                {"administrator","mantisbt","http://localhost:8989/login_page.php"},
-//                {".","mantisbt","http://localhost:8989/login_page.php"}
-//        };
-
-        Utils utils = new Utils();
-        String path = System.getProperty("user.dir") + "/src/test/resources/files/LoginTestData.xls";
-
-        int l = utils.getRowCount(path);
-        int c = utils.getCellCount(path, 1);
-
-        String LoginTestData[][] = new String[l][c];
-
-        for (int i = 0; i < l; i++) //1
-        {
-            for (int j = 0; j < c; j++) //0
-            {
-                LoginTestData[i][j] = utils.getCellData(path, i, j);
-            }
-        }
-
-        return LoginTestData;
-    }
+    static Utils utils;
 
     //Tests
     @Test
@@ -129,5 +98,39 @@ public class LoginTests extends TestBase {
 
         Assert.assertEquals(resposta, loginPage.retornaUrlAtualTratada());
     }
+
+    @DataProvider(name = "LoginTestData")
+    public static Object[][] getDadosUsuarioParaTesteComExcel() throws IOException {
+
+        utils = new Utils();
+        String path = System.getProperty("user.dir") + "/src/test/resources/files/LoginTestData.xls";
+
+        int l = utils.getRowCount(path);
+        int c = utils.getCellCount(path, 1);
+
+        String LoginTestData[][] = new String[l][c];
+
+        for (int i = 0; i < l; i++) //1
+        {
+            for (int j = 0; j < c; j++) //0
+            {
+                LoginTestData[i][j] = utils.getCellData(path, i, j);
+            }
+        }
+
+        return LoginTestData;
+    }
+
+    /**
+     //        String LoginTestData[][] = {
+     //                {"AdminNaoExiste","mantisbt","http://localhost:8989/login_page.php"},
+     //                {"administrator","SenhaNaoExiste","http://localhost:8989/login_page.php"},
+     //                {"Inexistente_User","Inexistente_Senha","http://localhost:8989/login_page.php"},
+     //                {"administrator","","http://localhost:8989/login_page.php"},
+     //                {"administrator","MANTISBT","http://localhost:8989/login_page.php"},
+     //                {"administrator","mantisbt","http://localhost:8989/login_page.php"},
+     //                {".","mantisbt","http://localhost:8989/login_page.php"}
+     //        };
+     */
 
 }

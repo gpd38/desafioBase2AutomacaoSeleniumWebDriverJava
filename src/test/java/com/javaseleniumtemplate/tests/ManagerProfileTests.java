@@ -5,16 +5,11 @@ import com.javaseleniumtemplate.flows.LoginFlows;
 import com.javaseleniumtemplate.pages.ManagerPage;
 import com.javaseleniumtemplate.pages.ManagerProfilePage;
 import com.javaseleniumtemplate.utils.Utils;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Row;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Iterator;
 
 public class ManagerProfileTests extends TestBase {
 
@@ -22,6 +17,7 @@ public class ManagerProfileTests extends TestBase {
     LoginFlows loginFlows;
     ManagerPage managerPage;
     ManagerProfilePage managerProfilePage;
+    static Utils utils;
 
     @Test
     public void cadastrarProfile() {
@@ -77,8 +73,8 @@ public class ManagerProfileTests extends TestBase {
         Assert.assertEquals(msgErrorEnviarVazio, managerProfilePage.retornaMensagemDeErroSemInformacao());
     }
 
-    @Test
-    public void efetuarCadastroProfileUsandoDataDriven() {
+    @Test(dataProvider = "PerfilTestData")
+    public void efetuarCadastroProfileUsandoDataDriven(String plataforma, String so, String versao, String descricao) {
         loginFlows = new LoginFlows();
         managerPage = new ManagerPage();
         managerProfilePage = new ManagerProfilePage();
@@ -86,52 +82,44 @@ public class ManagerProfileTests extends TestBase {
         // Parameteres
         String usuario = "administrator";
         String senha = "mantisbt";
-        String plataforma, so, versao, descricao;
-        FileInputStream file;
-        HSSFWorkbook workBook;
-        HSSFSheet sheet;
-        Iterator<Row> rows;
-        Row row;
-        String caminhoArquivo = "src/test/resources/files/PerfilTestData.xls";
 
         loginFlows.efetuarLogin(usuario, senha);
         managerPage.clickManagerGeralInfoTab();
         managerPage.clickManagerGlobalProfilesTab();
 
-        try {
-            file = new FileInputStream(caminhoArquivo);
-            try {
-                workBook = new HSSFWorkbook(file);
-                // Escolhendo a aba ZERO da planilha
-                sheet = workBook.getSheetAt(0);
-                // Armazena todas as linhas da planilha
-                rows = sheet.iterator();
-                while (rows.hasNext()) {
-                    // Armazena uma linha para ser trabalhada
-                    row = rows.next();
-                    plataforma = row.getCell(0).getStringCellValue();
-                    so = row.getCell(1).getStringCellValue();
-                    versao = row.getCell(2).getStringCellValue();
-                    descricao = row.getCell(3).getStringCellValue();
+        // Test
+        managerProfilePage.preencherPlataforma(plataforma);
+        managerProfilePage.preencherSistemaOperacional(so);
+        managerProfilePage.preencherVersaoSO(versao);
+        managerProfilePage.preencherDescricao(descricao);
+        managerProfilePage.clicarAddPerfil();
 
-                    // Test
-                    managerProfilePage.preencherPlataforma(plataforma);
-                    managerProfilePage.preencherSistemaOperacional(so);
-                    managerProfilePage.preencherVersaoSO(versao);
-                    managerProfilePage.preencherDescricao(descricao);
-                    managerProfilePage.clicarAddPerfil();
+        String concatProfile = plataforma + " " + so + " " + versao;
 
-                    String concatProfile = plataforma + " " + so + " " + versao;
+        Assert.assertTrue(managerProfilePage.existePerfilCadastrado(concatProfile));
+    }
 
-                    Assert.assertTrue(managerProfilePage.existePerfilCadastrado(concatProfile));
-                }
-                workBook.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+    @DataProvider(name = "PerfilTestData")
+    public static Object[][] getDadosPerfilParaTesteComExcel() throws IOException {
+
+        utils = new Utils();
+        String path = System.getProperty("user.dir") + "/src/test/resources/files/PerfilTestData.xls";
+
+        int l = utils.getRowCount(path);
+        int c = utils.getCellCount(path, 1);
+
+        String perfilTestData[][] = new String[l][c];
+
+        for (int i = 0; i < l; i++) //1
+        {
+            for (int j = 0; j < c; j++) //0
+            {
+                perfilTestData[i][j] = utils.getCellData(path, i, j);
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         }
+
+        return perfilTestData;
+
     }
 
 }

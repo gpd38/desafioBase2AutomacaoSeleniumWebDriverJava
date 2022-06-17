@@ -90,14 +90,11 @@ public class Utils {
         return result;
     }
 
-    FileInputStream file;
-    HSSFWorkbook workBook;
-    HSSFSheet sheet;
-    HSSFRow row;
-    HSSFCell cell;
-    String value;
+    public static int getRowCount(String path) throws IOException {
+        FileInputStream file;
+        HSSFWorkbook workBook;
+        HSSFSheet sheet;
 
-    public int getRowCount(String path) throws IOException {
         file = new FileInputStream(path);
         workBook = new HSSFWorkbook(file);
         sheet = workBook.getSheetAt(0);
@@ -108,7 +105,12 @@ public class Utils {
         return rowcount;
     }
 
-    public int getCellCount(String path, int rownum) throws IOException {
+    public static int getCellCount(String path, int rownum) throws IOException {
+        FileInputStream file;
+        HSSFWorkbook workBook;
+        HSSFSheet sheet;
+        HSSFRow row;
+
         file = new FileInputStream(path);
         workBook = new HSSFWorkbook(file);
         sheet = workBook.getSheetAt(0);
@@ -120,7 +122,13 @@ public class Utils {
         return cellcount;
     }
 
-    public String getCellData(String path, int rownum, int colnum) throws IOException {
+    public static String getCellData(String path, int rownum, int colnum) throws IOException {
+        FileInputStream file;
+        HSSFWorkbook workBook;
+        HSSFSheet sheet;
+        HSSFRow row;
+        HSSFCell cell;
+
         file = new FileInputStream(path);
         workBook = new HSSFWorkbook(file);
         sheet = workBook.getSheetAt(0);
