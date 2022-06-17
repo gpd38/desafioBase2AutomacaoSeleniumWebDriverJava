@@ -232,6 +232,20 @@ Após salvar, verifique se o projeo está habilitado e clique em "construir agor
     - cadastrarNovaIssueComSucessoInformandoSomenteCamposObrigatorios
     - cadastrarNovaIssueComSucessoInformandoTodosOsCampos
 
+### Selenium Grid
+
+Para executar utilizando o selenium grid no projeto.
+    - Configurar os contêineres hub
+    - Configurar os node dos navegadores
+    - Executar os comandos:
+        - java -jar selenium-server-4.2.2.jar node
+        - java -jar selenium-server-4.2.2.jar hub
+    - Ajustar as configurações nas proriedades do projeto para execução remota
+    - Acessar a url "http://localhost:4444/" e validar se tudo está em execução
+    - Rodar os testes
+
+![alt text](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/evidencias/selenium%20grid/Screenshot_2.png)
+
 ### Licença
 
 Este projeto esta sobe a licença [MIT](./LICENSE).
