@@ -235,6 +235,7 @@ Após salvar, verifique se o projeo está habilitado e clique em "construir agor
 ### Selenium Grid
 
 Para executar utilizando o selenium grid no projeto.
+    
     - Configurar os contêineres hub
     - Configurar os node dos navegadores
     - Executar os comandos:
