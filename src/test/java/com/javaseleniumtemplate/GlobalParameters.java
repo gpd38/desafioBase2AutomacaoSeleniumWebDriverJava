@@ -52,5 +52,6 @@ public class GlobalParameters {
         DB_USER = properties.getProperty("db.user");
         DB_PASSWORD = properties.getProperty("db.password");
         DB_DRIVER = properties.getProperty("db.driver");
+        RESOURCES = properties.getProperty("resources");
     }
 }

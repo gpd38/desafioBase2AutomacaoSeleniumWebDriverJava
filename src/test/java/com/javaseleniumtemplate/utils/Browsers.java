@@ -28,13 +28,13 @@ public class Browsers {
 
     public static WebDriver getRemoteChrome() {
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("no-sandbox");
-        chromeOptions.addArguments("--allow-running-insecure-content");
-        chromeOptions.addArguments("--lang=pt-BR");
-        chromeOptions.addArguments("download.default_directory", downloadPath);
+        //chromeOptions.addArguments("no-sandbox");
+        //chromeOptions.addArguments("--allow-running-insecure-content");
+        //chromeOptions.addArguments("--lang=pt-BR");
+       //chromeOptions.addArguments("download.default_directory", downloadPath);
 
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+        //capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 
         URL url = null;
         try {
