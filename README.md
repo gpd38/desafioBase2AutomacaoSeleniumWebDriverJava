@@ -15,7 +15,7 @@ A aplicação a ser automatiada será o mantis.
     <a href="#Arquitetura">Arquitetura</a> •
     <a href="#Setup">Setup</a> •
     <a href="#Cenários">Cenários</a> •
-    <a href="#Selenium Grid">Selenium Grid</a> •
+    <a href="#SeleniumGrid">Selenium Grid</a> •
     <a href="#Licença">Licença</a> •
     <a href="#Autor">Autor</a>
 </p>
