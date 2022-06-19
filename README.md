@@ -252,7 +252,7 @@ Obs.: Vídeo da execução deste projeto utilizando jenkins. <a href="https://yo
     - cadastrarNovaIssueComSucessoInformandoSomenteCamposObrigatorios
     - cadastrarNovaIssueComSucessoInformandoTodosOsCampos
 
-## Selenium Grid
+## SeleniumGrid
 
 Para executar o selenium grid no projeto.
 
