@@ -44,7 +44,7 @@ public class ManagerTagTests extends TestBase {
 
     }
 
-    @Test
+    //@Test
     public void validarTelaEdicaoDeTag() {
         //Objects instances
         loginFlows = new LoginFlows();
@@ -74,7 +74,7 @@ public class ManagerTagTests extends TestBase {
 
     }
 
-    @Test
+    //@Test
     public void editarTag() {
         //Objects instances
         loginFlows = new LoginFlows();
@@ -112,7 +112,7 @@ public class ManagerTagTests extends TestBase {
 
     }
 
-    @Test
+    //@Test
     public void deletarTag() {
         //Objects instances
         loginFlows = new LoginFlows();
@@ -124,7 +124,7 @@ public class ManagerTagTests extends TestBase {
         String senha = "mantisbt";
         String id = Utils.gerarNumerosAleatorios();
 
-        String tagName = "tag" + id;
+        String tagName = "deletar tag" + id;
         String tagDescription = "descrição tag " + id;
 
         //Test
