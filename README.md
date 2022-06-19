@@ -182,6 +182,9 @@ pipeline {
 
 Após salvar, verifique se o projeo está habilitado e clique em "construir agora" (BR) ou "build" (EN).
 
+Obs.: Vídeo da execução deste projeto utilizando jenkins. <a href="https://youtu.be/cTKmheHp49Q">Automação do Sistema Mantis com Jenkins</a>
+
+
 ## Cenários
 
 - [LoginTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/src/test/java/com/javaseleniumtemplate/tests/LoginTests.java)
