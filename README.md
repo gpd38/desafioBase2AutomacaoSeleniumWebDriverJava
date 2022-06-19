@@ -23,18 +23,24 @@ A aplicação a ser automatiada será o mantis.
 
 1. Implementar 50 scripts de testes que manipulem uma aplicação web (sugestões: Mantis ou TestLink) com Page Objects.
 2. Alguns scripts devem ler dados de uma planilha Excel para implementar Data-Driven.
-   - Quem utilizar Cucumber, SpecFlow ou outra ferramenta de BDD não precisa implementar lendo de uma planilha Excel. Pode ser a implementação de um Scenario Outline.
-3. Notem que 50 scripts podem cobrir mais de 50 casos de testes se usarmos Data-Driven. Em outras palavras, implementar 50 CTs usando data-driven não é a mesma coisa que implementar 50 scripts.
+    - Quem utilizar Cucumber, SpecFlow ou outra ferramenta de BDD não precisa implementar lendo de uma planilha Excel.
+      Pode ser a implementação de um Scenario Outline.
+3. Notem que 50 scripts podem cobrir mais de 50 casos de testes se usarmos Data-Driven. Em outras palavras, implementar
+   50 CTs usando data-driven não é a mesma coisa que implementar 50 scripts.
 4. Os casos de testes precisam ser executados em no mínimo três navegadores. Utilizando o Selenium Grid.
-   - Não é necessário executar em paralelo. Pode ser demonstrada a execução dos browsers separadamente.
-   - Não é uma boa prática executar os testes em todos os browsers em uma única execução. A melhor forma é controlar o browser através de um arquivo de configuração.
-       - .NET: normalmente utiliza-se app.config
-       - Java: normalmente utiliza-se a classe Properties e cria-se um arquivo chamado environment.properties.
+    - Não é necessário executar em paralelo. Pode ser demonstrada a execução dos browsers separadamente.
+    - Não é uma boa prática executar os testes em todos os browsers em uma única execução. A melhor forma é controlar o
+      browser através de um arquivo de configuração.
+        - .NET: normalmente utiliza-se app.config
+        - Java: normalmente utiliza-se a classe Properties e cria-se um arquivo chamado environment.properties.
 5. Gravar screenshots ou vídeo automaticamente dos casos de testes.
-6. O projeto deverá gerar um relatório de testes automaticamente com screenshots ou vídeos embutidos. Sugestões: Allure Report ou ExtentReport.
-7. A massa de testes deve ser preparada neste projeto, seja com scripts carregando massa nova no BD ou com restore de banco de dados.
-8. Um dos scripts deve injetar Javascript para executar alguma operação na tela. O objetivo aqui é exercitar a injeção de Javascript dentro do código do Selenium.
-   - Sugestão: fazer o login usando Javascript ao invés do código do Selenium.
+6. O projeto deverá gerar um relatório de testes automaticamente com screenshots ou vídeos embutidos. Sugestões: Allure
+   Report ou ExtentReport.
+7. A massa de testes deve ser preparada neste projeto, seja com scripts carregando massa nova no BD ou com restore de
+   banco de dados.
+8. Um dos scripts deve injetar Javascript para executar alguma operação na tela. O objetivo aqui é exercitar a injeção
+   de Javascript dentro do código do Selenium.
+    - Sugestão: fazer o login usando Javascript ao invés do código do Selenium.
 9. Testes deverão ser agendados pelo Jenkins, CircleCI, TFS, TeamCity ou outra ferramenta de CI que preferir.
 
 ## Arquitetura
@@ -57,7 +63,7 @@ A aplicação a ser automatiada será o mantis.
 Para facilitar o entendimento da arquitetura do projeto de testes automatizados, foi criado um fluxograma baseado nas
 features principais que envolvam a arquitetura conforme imagem abaixo:
 
-![alt text](https://i.imgur.com/wexOWJF.png)
+![Padrão de arquitetura de testes da Base2](https://i.imgur.com/wexOWJF.png)
 
 **Relatório de testes**
 
@@ -118,14 +124,18 @@ LoginFlows (classe) loginFlows (objeto)
 
 ## Setup
 
-- Versão 1.8 do Java JDK instalada no computador (https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html)
-- Versão community do IntelliJ IDEA instalada no computador (https://www.jetbrains.com/pt-br/idea/download/#section=windows)
+- Versão 1.8 do Java JDK instalada no
+  computador (https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html)
+- Versão community do IntelliJ IDEA instalada no
+  computador (https://www.jetbrains.com/pt-br/idea/download/#section=windows)
 - Versão do Google Chrome instalada no computador: Versão 92.0.4515.159 (https://www.google.com/chrome/)
-- Versão do MozillaFirefox instalada no computador: Versão 91.0.1  (https://www.mozilla.org/pt-BR/firefox/new/)
-- Versão do Microsoft Edge instalada no computador: Versão 92.0.902.73  (https://www.microsoft.com/pt-br/edge?r=1)
-- Versão do Jenkins instalada no computador: Versão 2.289.3 (https://www.jenkins.io/download/)
+- Versão do MozillaFirefox instalada no computador: Versão 91.0.1 (https://www.mozilla.org/pt-BR/firefox/new/)
+- Versão do Microsoft Edge instalada no computador: Versão 92.0.902.73 (https://www.microsoft.com/pt-br/edge?r=1)
+- Versão do Jenkins instalada no computador: Versão 2.335 (https://updates.jenkins-ci.org/download/war/)
 
 **Jenkins**
+
+Faça o download do jenkins na extensão .war e execute o comando "java -jar jenkins.war". Após a instalação e configuração inicial de usuário e senha, aplicar uma das configurações a seguir.
 
 - Configuração opção 1:
     - Criar um projeto do tipo pipeline
@@ -141,6 +151,7 @@ LoginFlows (classe) loginFlows (objeto)
     - Na opção "Pipeline"
         - Definition: Pipeline Script
     - Inserir o script abaixo:
+
 ```
 pipeline {
    agent any
@@ -160,13 +171,18 @@ pipeline {
                bat 'mvn test'
             }
        }
-    }
+       stage('Deploy') {
+            steps{
+                echo "Deploying the Project"
+            }
+        }
+   }
 }
 ```
 
 Após salvar, verifique se o projeo está habilitado e clique em "construir agora" (BR) ou "build" (EN).
 
-## Cenários 
+## Cenários
 
 - [LoginTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/src/test/java/com/javaseleniumtemplate/tests/LoginTests.java)
     - efetuarLoginComSucesso
@@ -234,18 +250,19 @@ Após salvar, verifique se o projeo está habilitado e clique em "construir agor
 
 ### Selenium Grid
 
-Para executar utilizando o selenium grid no projeto.
-    
-    - Configurar os contêineres hub
-    - Configurar os node dos navegadores
-    - Executar os comandos:
-        - java -jar selenium-server-4.2.2.jar node
+Para executar o selenium grid no projeto.
+
+    - Baixar o arquivo do selenium server
+    - Executar o comando via CMD no diretório onde o arquivo foi baixado.
         - java -jar selenium-server-4.2.2.jar hub
+        - java -jar selenium-server-4.2.2.jar node
     - Ajustar as configurações nas proriedades do projeto para execução remota
     - Acessar a url "http://localhost:4444/" e validar se tudo está em execução
     - Rodar os testes
 
-![alt text](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/blob/master/evidencias/selenium%20grid/Screenshot_2.png)
+![Imagem do Selenium Grid em execução](https://raw.githubusercontent.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/master/evidencias/selenium%20grid/Screenshot_2.png)
+
+OBS.: Você pode criar um arquivo com a extensão .bat para inicializar os node e o hub mais rapidamente.
 
 ### Licença
 
