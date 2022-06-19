@@ -16,5 +16,10 @@ pipeline {
                bat 'mvn test'
             }
        }
+       stage('Deploy') {
+            steps{
+                echo "Deploying the Project"
+            }
+        }
    }
 }
