@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -28,13 +29,13 @@ public class Browsers {
 
     public static WebDriver getRemoteChrome() {
         ChromeOptions chromeOptions = new ChromeOptions();
-        //chromeOptions.addArguments("no-sandbox");
-        //chromeOptions.addArguments("--allow-running-insecure-content");
-        //chromeOptions.addArguments("--lang=pt-BR");
-       //chromeOptions.addArguments("download.default_directory", downloadPath);
+        chromeOptions.addArguments("no-sandbox");
+        chromeOptions.addArguments("--allow-running-insecure-content");
+        chromeOptions.addArguments("--lang=pt-BR");
+       chromeOptions.addArguments("download.default_directory", downloadPath);
 
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        //capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 
         URL url = null;
         try {
@@ -77,13 +78,12 @@ public class Browsers {
     }
 
     public static WebDriver getLocalFirefox() {
-        //FirefoxOptions firefoxOptions = new FirefoxOptions();
-        //firefoxOptions.addArguments("no-sandbox");
-        //firefoxOptions.addArguments("--allow-running-insecure-content");
-        //firefoxOptions.addArguments("--lang=pt-BR");
-        //firefoxOptions.addArguments("download.default_directory", downloadPath);
-        //return new FirefoxDriver(firefoxOptions);
-        return new FirefoxDriver();
+        FirefoxOptions firefoxOptions = new FirefoxOptions();
+        firefoxOptions.addArguments("no-sandbox");
+        firefoxOptions.addArguments("--allow-running-insecure-content");
+        firefoxOptions.addArguments("--lang=pt-BR");
+        firefoxOptions.addArguments("download.default_directory", downloadPath);
+        return new FirefoxDriver(firefoxOptions);
     }
 
     public static WebDriver getRemoteFirefox() {
