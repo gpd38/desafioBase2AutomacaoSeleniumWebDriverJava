@@ -1,6 +1,7 @@
 package com.javaseleniumtemplate.bases;
 
 import com.javaseleniumtemplate.GlobalParameters;
+import com.javaseleniumtemplate.utils.DBUtils;
 import com.javaseleniumtemplate.utils.DriverFactory;
 import com.javaseleniumtemplate.utils.ExtentReportUtils;
 import org.testng.ITestResult;
@@ -24,6 +25,7 @@ public class TestBase {
         DriverFactory.createInstance();
         DriverFactory.INSTANCE.manage().window().maximize();
         DriverFactory.INSTANCE.navigate().to(GlobalParameters.URL_DEFAULT);
+        DBUtils.prepararDadosBanco();
     }
 
     @AfterMethod
