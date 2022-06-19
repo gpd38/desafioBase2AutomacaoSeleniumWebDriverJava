@@ -11,7 +11,7 @@ public class ManagerVerTarefasPage extends PageBase {
     String tarefa = "0000001";
     // Mapping
     By botaoAcessarPagina = By.xpath("//a[@href='/view_all_bug_page.php']");
-    By clicarEditarTarefa = By.xpath("//a[contains(.,'"+tarefa+"')]");
+    By clicarEditarTarefa = By.xpath("//a[contains(.,'" + tarefa + "')]");
     By campoMarcador = By.id("tag_string");
     By aplicarMarcador = By.xpath("//input[@value='Aplicar']");
     By listaMarcadores = By.xpath("//td[@class='bug-tags']");
@@ -31,10 +31,12 @@ public class ManagerVerTarefasPage extends PageBase {
     }
 
     public void preencherMarcador(String tag) {
-        sendKeys(campoMarcador,tag);
+        sendKeys(campoMarcador, tag);
     }
 
-    public void clicarEmAplicar() {click(aplicarMarcador);}
+    public void clicarEmAplicar() {
+        click(aplicarMarcador);
+    }
 
     public boolean validarMarcadorAplicado(String tag) {
         String result;

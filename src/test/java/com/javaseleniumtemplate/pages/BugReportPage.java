@@ -3,8 +3,6 @@ package com.javaseleniumtemplate.pages;
 import com.javaseleniumtemplate.bases.PageBase;
 import org.openqa.selenium.By;
 
-import java.io.IOException;
-
 public class BugReportPage extends PageBase {
     //Mapping
     By dropdownProjetos = By.id("select-project-id");

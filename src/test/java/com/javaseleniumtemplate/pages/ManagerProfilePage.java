@@ -49,7 +49,7 @@ public class ManagerProfilePage extends PageBase {
     }
 
     public boolean existePerfilCadastrado(String concatProfile) {
-            comboBoxSelectByVisibleText(dropdownPerfil, concatProfile);
-            return true;
+        comboBoxSelectByVisibleText(dropdownPerfil, concatProfile);
+        return true;
     }
 }

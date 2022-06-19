@@ -33,25 +33,25 @@ public class MinhaContaPage extends PageBase {
         click(abaGerenciarColunas);
     }
 
-    public String retornaMensagemErro(){
+    public String retornaMensagemErro() {
         return getText(mensagemErroAddToken);
     }
 
-    public void acessarAbaPerfis(){
+    public void acessarAbaPerfis() {
         click(abaPerfis);
     }
 
-    public void acessarAbaToken(){
+    public void acessarAbaToken() {
         click(abaToken);
     }
 
-    public void clicarBotaoCriarTokenAPI(){
+    public void clicarBotaoCriarTokenAPI() {
         click(botaoCriarTokenAPI);
     }
 
     public void preencherToken(String nomeToken) {
         clear(campoNomeToken);
-        sendKeys(campoNomeToken,nomeToken);
+        sendKeys(campoNomeToken, nomeToken);
     }
 
     public boolean existeToken(String nomeToken) {

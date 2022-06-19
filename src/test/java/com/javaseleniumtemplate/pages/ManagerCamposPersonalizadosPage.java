@@ -42,11 +42,11 @@ public class ManagerCamposPersonalizadosPage extends PageBase {
         sendKeys(campoNomeCP, novoCampoPersonalizado);
     }
 
-    public void clicarDeletarCampoPersonalizado(){
+    public void clicarDeletarCampoPersonalizado() {
         click(botaoDeletarCP);
     }
 
-    public void clicarConfirmacaoDeletarCampoPersonaizado(){
+    public void clicarConfirmacaoDeletarCampoPersonaizado() {
         click(botaoConfirmacaoDeletarCP);
     }
 }

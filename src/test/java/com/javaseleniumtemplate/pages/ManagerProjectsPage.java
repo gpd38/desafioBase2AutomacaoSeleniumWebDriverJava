@@ -55,20 +55,20 @@ public class ManagerProjectsPage extends PageBase {
     }
 
     public void selecionarEditarProjeto(String projectName) {
-        elementTabelaDinamica = By.xpath("//td[contains(.,'"+projectName+"')]//a");
+        elementTabelaDinamica = By.xpath("//td[contains(.,'" + projectName + "')]//a");
         click(elementTabelaDinamica);
     }
 
-    public void editarProjeto(){
+    public void editarProjeto() {
         click(botaoAtualizarProjeto);
     }
 
-    public void deletarProjeto(){
+    public void deletarProjeto() {
         click(botaoDeletarProjeto);
     }
 
     public Boolean returnExisteElemento(String projectName) {
-        elementTabelaDinamica = By.xpath("//td[contains(.,'"+projectName+"')]//a");
+        elementTabelaDinamica = By.xpath("//td[contains(.,'" + projectName + "')]//a");
         return returnIfElementExists(elementTabelaDinamica);
     }
 

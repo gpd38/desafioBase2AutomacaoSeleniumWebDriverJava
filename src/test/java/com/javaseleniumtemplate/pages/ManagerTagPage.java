@@ -39,7 +39,7 @@ public class ManagerTagPage extends PageBase {
 
     public boolean existeElementoEspecifico(String tag) {
         List<WebElement> listaTags = waitForElements(tabelaTag);
-        System.out.println("QTD LISTA: "+listaTags.size());
+        System.out.println("QTD LISTA: " + listaTags.size());
         for (WebElement atual : listaTags) {
             elementoTagPesquisado = By.xpath("//a[contains(.,'" + atual.getText() + "')]");
             if (getText(elementoTagPesquisado).equalsIgnoreCase(tag))
