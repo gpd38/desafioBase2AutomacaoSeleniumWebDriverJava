@@ -252,7 +252,7 @@ Obs.: Vídeo da execução deste projeto utilizando jenkins. <a href="https://yo
     - cadastrarNovaIssueComSucessoInformandoSomenteCamposObrigatorios
     - cadastrarNovaIssueComSucessoInformandoTodosOsCampos
 
-### Selenium Grid
+## Selenium Grid
 
 Para executar o selenium grid no projeto.
 
@@ -268,11 +268,11 @@ Para executar o selenium grid no projeto.
 
 OBS.: Você pode criar um arquivo com a extensão .bat para inicializar os node e o hub mais rapidamente.
 
-### Licença
+## Licença
 
 Este projeto esta sobe a licença [MIT](./LICENSE).
 
-### Autor
+## Autor
 
 <table>
     <tr>
