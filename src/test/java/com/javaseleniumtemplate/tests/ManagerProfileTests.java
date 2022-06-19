@@ -13,11 +13,34 @@ import java.io.IOException;
 
 public class ManagerProfileTests extends TestBase {
 
+    static Utils utils;
     // Objects
     LoginFlows loginFlows;
     ManagerPage managerPage;
     ManagerProfilePage managerProfilePage;
-    static Utils utils;
+
+    @DataProvider(name = "PerfilTestData")
+    public static Object[][] getDadosPerfilParaTesteComExcel() throws IOException {
+
+        utils = new Utils();
+        String path = System.getProperty("user.dir") + "/src/test/resources/files/PerfilTestData.xls";
+
+        int l = utils.getRowCount(path);
+        int c = utils.getCellCount(path, 1);
+
+        String perfilTestData[][] = new String[l][c];
+
+        for (int i = 0; i < l; i++) //1
+        {
+            for (int j = 0; j < c; j++) //0
+            {
+                perfilTestData[i][j] = utils.getCellData(path, i, j);
+            }
+        }
+
+        return perfilTestData;
+
+    }
 
     @Test
     public void cadastrarProfile() {
@@ -97,29 +120,6 @@ public class ManagerProfileTests extends TestBase {
         String concatProfile = plataforma + " " + so + " " + versao;
 
         Assert.assertTrue(managerProfilePage.existePerfilCadastrado(concatProfile));
-    }
-
-    @DataProvider(name = "PerfilTestData")
-    public static Object[][] getDadosPerfilParaTesteComExcel() throws IOException {
-
-        utils = new Utils();
-        String path = System.getProperty("user.dir") + "/src/test/resources/files/PerfilTestData.xls";
-
-        int l = utils.getRowCount(path);
-        int c = utils.getCellCount(path, 1);
-
-        String perfilTestData[][] = new String[l][c];
-
-        for (int i = 0; i < l; i++) //1
-        {
-            for (int j = 0; j < c; j++) //0
-            {
-                perfilTestData[i][j] = utils.getCellData(path, i, j);
-            }
-        }
-
-        return perfilTestData;
-
     }
 
 }

@@ -11,10 +11,32 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class LoginTests extends TestBase {
+    static Utils utils;
     //Objects
     LoginPage loginPage;
     MainPage mainPage;
-    static Utils utils;
+
+    @DataProvider(name = "LoginTestData")
+    public static Object[][] getDadosUsuarioParaTesteComExcel() throws IOException {
+
+        utils = new Utils();
+        String path = System.getProperty("user.dir") + "/src/test/resources/files/LoginTestData.xls";
+
+        int l = utils.getRowCount(path);
+        int c = utils.getCellCount(path, 1);
+
+        String LoginTestData[][] = new String[l][c];
+
+        for (int i = 0; i < l; i++) //1
+        {
+            for (int j = 0; j < c; j++) //0
+            {
+                LoginTestData[i][j] = utils.getCellData(path, i, j);
+            }
+        }
+
+        return LoginTestData;
+    }
 
     //Tests
     @Test
@@ -97,28 +119,6 @@ public class LoginTests extends TestBase {
         loginPage.clicarEmLogin();
 
         Assert.assertEquals(resposta, loginPage.retornaUrlAtualTratada());
-    }
-
-    @DataProvider(name = "LoginTestData")
-    public static Object[][] getDadosUsuarioParaTesteComExcel() throws IOException {
-
-        utils = new Utils();
-        String path = System.getProperty("user.dir") + "/src/test/resources/files/LoginTestData.xls";
-
-        int l = utils.getRowCount(path);
-        int c = utils.getCellCount(path, 1);
-
-        String LoginTestData[][] = new String[l][c];
-
-        for (int i = 0; i < l; i++) //1
-        {
-            for (int j = 0; j < c; j++) //0
-            {
-                LoginTestData[i][j] = utils.getCellData(path, i, j);
-            }
-        }
-
-        return LoginTestData;
     }
 
     /**
