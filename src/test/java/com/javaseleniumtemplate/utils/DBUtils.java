@@ -70,4 +70,18 @@ public class DBUtils {
             }
         }
     }
+
+    public static void prepararDadosBanco() {
+        String queriesPath = System.getProperty("user.dir") + "/src/test/resources/scripts/script_start_banco.sql";
+        String query = Utils.getFileContent(queriesPath);
+        DBUtils.executeQuery(query);
+    }
+
+    public static void limparDadosBanco() {
+        //TODO Futuramente desmembrar o metodo "prepararDadosBanco" em limpar e criar os dados do banco
+    }
+
+    public static void criarDadosBanco() {
+        //TODO Futuramente desmembrar o metodo "prepararDadosBanco" em limpar e criar os dados do banco
+    }
 }

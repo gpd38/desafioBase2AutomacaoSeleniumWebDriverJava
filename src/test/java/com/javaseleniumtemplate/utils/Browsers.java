@@ -32,7 +32,7 @@ public class Browsers {
         chromeOptions.addArguments("no-sandbox");
         chromeOptions.addArguments("--allow-running-insecure-content");
         chromeOptions.addArguments("--lang=pt-BR");
-       chromeOptions.addArguments("download.default_directory", downloadPath);
+        chromeOptions.addArguments("download.default_directory", downloadPath);
 
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
