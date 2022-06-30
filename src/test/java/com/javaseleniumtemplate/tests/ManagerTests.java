@@ -157,4 +157,26 @@ public class ManagerTests extends TestBase {
 
         Assert.assertEquals(tituloPageNaAbaConfiguration, managerPage.returnUrlPaginaAtual());
     }
+
+    @Test
+    public void validarUltimoCampoComJavaScript() {
+//Objects instances
+        loginFlows = new LoginFlows();
+        managerPage = new ManagerPage();
+
+        //Parameteres
+        String usuario = "administrator";
+        String senha = "mantisbt";
+        String msgCadastroSucesso = "Operação realizada com sucesso.";
+
+        //Test
+        loginFlows.efetuarLogin(usuario, senha);
+        managerPage.clickManagerGeralInfoTab();
+        managerPage.clickManagerConfigurationTab();
+        managerPage.clickManagerConfigurationSubTabColums();
+        managerPage.encontrarElementoComJS();
+        managerPage.clicarBotaoAtualizarColunas();
+
+        Assert.assertEquals(msgCadastroSucesso, managerPage.returnMsgSucessoTexto());
+    }
 }

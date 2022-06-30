@@ -109,7 +109,7 @@ public class LoginTests extends TestBase {
     }
 
     @Test(dataProvider = "LoginTestData")
-    public void efetuarLoginComUsandoDataDriven(String usuario, String senha, String resposta) {
+    public void efetuarLoginComDataDriven(String usuario, String senha, String resposta) {
         loginPage = new LoginPage();
 
         // Test
