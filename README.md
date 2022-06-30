@@ -227,6 +227,7 @@ Mantis com Jenkins</a>
     - validateAccessGlobalProfilesTab
     - validateAccessPluginsTab
     - validateAccessConfigurationTab
+    - validarUltimoCampoComJavaScript
 - [ManagerUsersTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerUsersTests.java)
     - cadastrarRelatorUser
     - cadastrarVisualizadorUser
