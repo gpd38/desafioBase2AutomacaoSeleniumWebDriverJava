@@ -1,24 +1,24 @@
 version: "3"
 services:
-  db: 
-    environment: 
+  db:
+    environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=bugtracker
       - MYSQL_USER=mantisbt
       - MYSQL_PASSWORD=mantisbt
     image: mariadb
-    ports: 
+    ports:
       - "3306:3306"
     restart: always
 
-  mantisbt: 
+  mantisbt:
     image: "vimagick/mantisbt:latest"
-    links: 
+    links:
       - db
-    ports: 
+    ports:
       - "8989:80"
     restart: always
-    
+
   selenium-hub:
     image: selenium/hub:4.2.2-20220609
     container_name: selenium-hub
@@ -26,7 +26,7 @@ services:
       - "4442:4442"
       - "4443:4443"
       - "4444:4444"
-    
+
   chrome:
     image: selenium/node-chrome:4.2.2-20220609
     shm_size: 2gb
