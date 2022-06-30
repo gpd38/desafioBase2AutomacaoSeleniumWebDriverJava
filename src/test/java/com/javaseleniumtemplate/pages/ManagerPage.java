@@ -14,6 +14,9 @@ public class ManagerPage extends PageBase {
     By gerenciarAbaPerfilGlobal = By.xpath("//div[2]/div[2]//li[6]");
     By gerenciarAbaPlugins = By.xpath("//div[2]/div[2]//li[7]");
     By gerenciarAbaConfiguracao = By.xpath("//div[2]/div[2]//li[8]");
+    By gerenciarSubAbaColunas = By.partialLinkText("Gerenciar Colun");
+    By botaoAtualizarColunas = By.xpath("//input[@value='Atualizar Colunas para Padrão Global para todos os Projetos']");
+    By msgSucessoTexto = By.xpath("//p[@class='bold bigger-110']");
 
     //Actions
     public void clickManagerGeralInfoTab() {
@@ -50,6 +53,22 @@ public class ManagerPage extends PageBase {
 
     public String returnUrlPaginaAtual() {
         return getURL();
+    }
+
+    public void clickManagerConfigurationSubTabColums() {
+        click(gerenciarSubAbaColunas);
+    }
+
+    public void encontrarElementoComJS() {
+        ScrollToFinalPageJavaScript();
+    }
+
+    public void clicarBotaoAtualizarColunas() {
+        click(botaoAtualizarColunas);
+    }
+
+    public String returnMsgSucessoTexto() {
+        return getText(msgSucessoTexto);
     }
 
 }

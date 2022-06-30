@@ -39,23 +39,25 @@ public class ManagerTagPage extends PageBase {
 
     public boolean existeElementoEspecifico(String tag) {
         List<WebElement> listaTags = waitForElements(tabelaTag);
-        System.out.println("QTD LISTA: " + listaTags.size());
+        //System.out.println("QTD LISTA: " + listaTags.size());
         for (WebElement atual : listaTags) {
             elementoTagPesquisado = By.xpath("//a[contains(.,'" + atual.getText() + "')]");
-            if (getText(elementoTagPesquisado).equalsIgnoreCase(tag))
-                return true;
+            //System.out.println(elementoTagPesquisado + " --- --- " + getText(elementoTagPesquisado));
+            if (getText(elementoTagPesquisado).equalsIgnoreCase(tag)) return true;
         }
         return false;
     }
 
     public By pesquisarElementoEspecifico(String tag) {
-        List<WebElement> listaTags = waitForElements(tabelaTag);
-        for (WebElement atual : listaTags) {
-            elementoTagPesquisado = By.xpath("//a[contains(.,'" + atual + "')]");
-            if (returnIfElementExists(elementoTagPesquisado) && getText(elementoTagPesquisado).equalsIgnoreCase(tag))
-                return (elementoTagPesquisado);
-        }
-        return null;
+        // System.out.println("TAG a ser pesquisada: " + tag);
+        //  List<WebElement> listaTags = waitForElements(tabelaTag);
+        // for (WebElement atual : listaTags) {
+        elementoTagPesquisado = By.xpath("//a[contains(.,'" + tag + "')]");
+        // System.out.println(elementoTagPesquisado + " <<< >>> " + getText(elementoTagPesquisado));
+        //  if (returnIfElementExists(elementoTagPesquisado) && getText(elementoTagPesquisado).equalsIgnoreCase(tag))
+        return (elementoTagPesquisado);
+        // }
+        //return null;
     }
 
     public void clicarNoElementoEncontrado(String tag) {
