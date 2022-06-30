@@ -1192,8 +1192,9 @@ INSERT INTO `mantis_bug_table` (`project_id`,`reporter_id`,`bug_text_id`,`summar
 INSERT INTO `mantis_bug_table` (`project_id`,`reporter_id`,`bug_text_id`,`summary`,`date_submitted`,`last_updated`) VALUES ('1','100', '100','Resumo_100','1630271419','1630271419');
 INSERT INTO `mantis_bug_table` (`project_id`,`reporter_id`,`bug_text_id`,`summary`,`date_submitted`,`last_updated`) VALUES ('1','101','101','Resumo default101: Primeiro report101','1630271419','1630271419');
 INSERT INTO `mantis_bug_table` (`project_id`,`reporter_id`,`bug_text_id`,`summary`,`date_submitted`,`last_updated`) VALUES ('1','102','102','Resumo default102: Segundo report102','1630271419','1630271419');
-
-
+#Tag
+INSERT INTO `mantis_tag_table` (`user_id`, `name`, `description`) VALUES ('1', 'tag000000001', 'descrição tag 000000001');
+INSERT INTO `mantis_tag_table` (`user_id`, `name`, `description`) VALUES ('2', 'tag000000002', 'descrição tag 000000002');
 
 
 
