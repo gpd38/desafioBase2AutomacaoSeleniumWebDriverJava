@@ -136,7 +136,8 @@ LoginFlows (classe) loginFlows (objeto)
 
 **Jenkins**
 
-Faça o download do jenkins na extensão .war e execute o comando "java -jar jenkins.war". Após a instalação e configuração inicial de usuário e senha, aplicar uma das configurações a seguir.
+Faça o download do jenkins na extensão .war e execute o comando "java -jar jenkins.war". Após a instalação e
+configuração inicial de usuário e senha, aplicar uma das configurações a seguir.
 
 - Configuração opção 1:
     - Criar um projeto do tipo pipeline
@@ -183,8 +184,8 @@ pipeline {
 
 Após salvar, verifique se o projeo está habilitado e clique em "construir agora" (BR) ou "build" (EN).
 
-Obs.: Vídeo da execução deste projeto utilizando jenkins. <a href="https://youtu.be/cTKmheHp49Q">Automação do Sistema Mantis com Jenkins</a>
-
+Obs.: Vídeo da execução deste projeto utilizando jenkins. <a href="https://youtu.be/cTKmheHp49Q">Automação do Sistema
+Mantis com Jenkins</a>
 
 ## Cenários
 
@@ -193,7 +194,7 @@ Obs.: Vídeo da execução deste projeto utilizando jenkins. <a href="https://yo
     - efetuarLoginComSenhaIncorreta
     - efetuarLoginComUsuarioIncorreto
     - perdeuSuaSenha
-    - efetuarLoginComUsandoDataDriven
+    - efetuarLoginComDataDriven
 - [ManagerCamposPersonalizadosTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerCamposPersonalizados.java)
     - cadastrarCampoPersonalizado
     - validarCampoPersonalizadoVazio
@@ -213,7 +214,7 @@ Obs.: Vídeo da execução deste projeto utilizando jenkins. <a href="https://yo
     - validarAcessoAoResumoComUsuarioAdmin
     - validarAcessoNegadoResumoComDeveloper
 - [ManagerTagTests](https://github.com/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava/tree/master/src/test/java/com/javaseleniumtemplate/tests/ManagerTagTests.java)
-    - cadastrarTag
+    - cadastrarTagCompleta
     - validarTelaEdicaoDeTag
     - editarTag
     - deletarTag
