@@ -1,10 +1,12 @@
 <p align="center">
   <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava?color=blue">
-  <img alt="GitHub" src="https://img.shields.io/github/license/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava?color=green">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava?color=red">
+  <img alt="GitHub" src="https://img.shields.io/github/license/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava?color=red">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava?color=green">
+  <img alt="GitHub repo file count" src="https://img.shields.io/github/directory-file-count/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava?color=orange">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/gpd38/desafioBase2AutomacaoSeleniumWebDriverJava?color=pink">
 </p>
 
-## Automação
+# Desafio de Automação da Base2 Tecnologia
 
 Projeto da empresa Base2 Tecnologia para os funcionários aprenderem e testarem seus conhecimentos de automação.
 
