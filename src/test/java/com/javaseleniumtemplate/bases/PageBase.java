@@ -2,6 +2,7 @@ package com.javaseleniumtemplate.bases;
 
 import com.javaseleniumtemplate.GlobalParameters;
 import com.javaseleniumtemplate.utils.DriverFactory;
+import com.javaseleniumtemplate.utils.ExtentReportUtils;
 import org.apache.commons.lang3.time.StopWatch;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -81,6 +82,7 @@ public class PageBase {
                 element = waitForElement(locator);
                 element.click();
                 timeOut.stop();
+                ExtentReportUtils.addTestInfo(3, "");
                 return;
             } catch (StaleElementReferenceException e) {
                 continue;
@@ -103,12 +105,14 @@ public class PageBase {
 
     protected void sendKeys(By locator, String text) {
         waitForElement(locator).sendKeys(text);
+        ExtentReportUtils.addTestInfo(3, "PARAMETER: " + text);
     }
 
     protected void sendKeysWithoutWaitVisible(By locator, String text) {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         WebElement element = driver.findElement(locator);
         element.sendKeys(text);
+        ExtentReportUtils.addTestInfo(3, "PARAMETER: " + text);
     }
 
     protected void clear(By locator) {
@@ -126,25 +130,30 @@ public class PageBase {
     protected void comboBoxSelectByVisibleText(By locator, String text) {
         Select comboBox = new Select(waitForElement(locator));
         comboBox.selectByVisibleText(text);
+        ExtentReportUtils.addTestInfo(3, "PARAMETER: " + text);
     }
 
     protected void mouseOver(By locator) {
         Actions action = new Actions(driver);
         action.moveToElement(waitForElement(locator)).build().perform();
+        ExtentReportUtils.addTestInfo(3, "");
     }
 
     protected String getText(By locator) {
         String text = waitForElement(locator).getText();
+        ExtentReportUtils.addTestInfo(3, "RETURN: " + text);
         return text;
     }
 
     protected String getValue(By locator) {
         String text = waitForElement(locator).getAttribute("value");
+        ExtentReportUtils.addTestInfo(3, "RETURN: " + text);
         return text;
     }
 
     protected boolean returnIfElementIsDisplayed(By locator) {
         boolean result = waitForElement(locator).isDisplayed();
+        ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
         return result;
     }
 
@@ -157,18 +166,21 @@ public class PageBase {
         } catch (Exception e) {
 
         }
+        ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
         return result;
     }
 
     protected boolean returnIfElementIsEnabled(By locator) {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         boolean result = driver.findElement(locator).isEnabled();
+        ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
         return result;
     }
 
     protected boolean returnIfElementIsSelected(By locator) {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         boolean result = driver.findElement(locator).isSelected();
+        ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
         return result;
     }
 
@@ -176,56 +188,68 @@ public class PageBase {
     protected void SendKeysJavaScript(By locator, String value) {
         WebElement element = waitForElement(locator);
         javaScriptExecutor.executeScript("arguments[0].value='" + value + "';", element);
+        ExtentReportUtils.addTestInfo(3, "PARAMETER: " + value);
     }
 
     protected void ClickJavaScript(By locator) {
         WebElement element = waitForElement(locator);
         javaScriptExecutor.executeScript("arguments[0].click();", element);
+        ExtentReportUtils.addTestInfo(3, "");
     }
 
     protected void ScrollToElementJavaScript(By locator) {
         WebElement element = waitForElement(locator);
         javaScriptExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+        ExtentReportUtils.addTestInfo(3, "");
     }
 
     protected void ScrollToFinalPageJavaScript() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+        ExtentReportUtils.addTestInfo(3, "");
     }
 
     protected void ScrollToTop() {
         javaScriptExecutor.executeScript("window.scrollTo(0, 0);");
+        ExtentReportUtils.addTestInfo(3, "");
     }
 
     //Default actions
     public void refresh() {
         DriverFactory.INSTANCE.navigate().refresh();
+        ExtentReportUtils.addTestInfo(2, "");
     }
 
     public void navigateTo(String url) {
         DriverFactory.INSTANCE.navigate().to(url);
+        ExtentReportUtils.addTestInfo(2, "PARAMETER: " + url);
     }
 
     public void openNewTab() {
         javaScriptExecutor.executeScript("window.open();");
+        ExtentReportUtils.addTestInfo(2, "");
     }
 
     public void closeTab() {
         driver.quit();
+        ExtentReportUtils.addTestInfo(2, "");
     }
 
     public String getTitle() {
         String title = driver.getTitle();
+        ExtentReportUtils.addTestInfo(2, "");
         return title;
     }
 
     public String getURLSemParametros() {
         String urlSemParametros = javaScriptExecutor.executeScript("return(document.URL.indexOf('?')?document.URL.split('?')[0]:document.URL) ").toString();
+        ExtentReportUtils.addTestInfo(2, "");
         return urlSemParametros;
     }
 
     public String getURL() {
         String url = driver.getCurrentUrl();
+        ExtentReportUtils.addTestInfo(2, "");
         return url;
     }
 
@@ -233,6 +257,7 @@ public class PageBase {
         waitUntilPageReady();
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         List<WebElement> elements = driver.findElements(locator);
+        ExtentReportUtils.addTestInfo(3, "");
         return elements;
     }
 
