@@ -2,17 +2,7 @@
 <suite name="JavaSeleniumTemplateTests" parallel="false">
     <test name="TestNgMavenTest">
         <classes>
-            <class name="com.javaseleniumtemplate.tests.LoginTests"/>
-            <class name="com.javaseleniumtemplate.tests.ManagerCamposPersonalizadosTests"/>
-            <class name="com.javaseleniumtemplate.tests.ManagerProfileTests"/>
-            <class name="com.javaseleniumtemplate.tests.ManagerProjectsTests"/>
-            <class name="com.javaseleniumtemplate.tests.ManagerResumoTests"/>
-            <class name="com.javaseleniumtemplate.tests.ManagerTagTests"/>
-            <class name="com.javaseleniumtemplate.tests.ManagerTests"/>
-            <class name="com.javaseleniumtemplate.tests.ManagerUsersTests"/>
-            <class name="com.javaseleniumtemplate.tests.ManagerVerTarefasTests"/>
-            <class name="com.javaseleniumtemplate.tests.MinhaContaTests"/>
-            <class name="com.javaseleniumtemplate.tests.ReportIssueTests"/>
+            <class name="com.javaseleniumtemplate.tests.FormularioTests"/>
         </classes>
     </test>
 </suite>
